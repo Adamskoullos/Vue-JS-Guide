@@ -82,7 +82,7 @@ Data/props can be passed down the component tree, this allows data to be more dy
 
 Props are passed into a component via it's `<tag>` within the `<template>`. Below is a nice pattern in which to do this:
 
-1. First we add the data/props in the data object within the `<script>` tags in the parent component. Then we pass the prop down from the parent component within the component tag inside the `<template>` tags.  Notice how because the props are first returned from the data object we can use data bind on the props within the component tags making these values more dynamic. 
+1. First we add the data/props in the data object within the `<script>` tags in the parent component. Then we pass the prop down from the parent component within the component tag inside the `<template>` tags.  Notice how because the props are first returned from the data object we can use data bind on the props within the component tags making these values more dynamic. Side not here: props do not have to be returned in the data object first, they can be directly placed within the component tags. 
 
 ![Screenshot from 2021-02-23 13-57-05](https://user-images.githubusercontent.com/73107656/108853802-0eb79080-75df-11eb-9c72-33b37432f284.png)
 
@@ -92,4 +92,8 @@ Props are passed into a component via it's `<tag>` within the `<template>`. Belo
 ![Screenshot from 2021-02-23 13-45-31](https://user-images.githubusercontent.com/73107656/108852349-694fed00-75dd-11eb-814a-66b8c0dbe470.png)
 
 Multiple props can be passed in this way.
+
+This last image shows how the prop 'theme' has been passed down and accepted and then used change the divs class depending on the props value:
+
+![Screenshot from 2021-02-23 14-23-47](https://user-images.githubusercontent.com/73107656/108857229-ca2df400-75e2-11eb-89cf-0189e9dbdce9.png)
 
