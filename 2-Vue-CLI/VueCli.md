@@ -58,7 +58,7 @@ When using components there is a 3 stepped process required before we can use th
 
 1. Import the module into App.vue
 2. Add the component to the components property within the exported object
-3. Add the component to the <template> within App.vue
+3. Add the component to the `<template>` within App.vue
 
 Below is an example of this:
 
