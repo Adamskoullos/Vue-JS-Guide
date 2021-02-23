@@ -54,12 +54,22 @@ The main gateway through to index.html is through main.js which is accepts compo
 
 ![Screenshot from 2021-02-23 11-48-43](https://user-images.githubusercontent.com/73107656/108839537-1b32ed80-75cd-11eb-8fe4-17bef16ed01c.png)
 
-When using components there is a 3 stepped process required before we can use them:
+When using components there is a 3 stepped process required before we can show them:
 
 1. Import the module into App.vue
-2. Add the component to the components property within the exported object
+2. Add/register the component to the components property within the exported object
 3. Add the component to the `<template>` within App.vue
 
 Below is an example of this:
 
 ![Screenshot from 2021-02-23 12-17-46](https://user-images.githubusercontent.com/73107656/108842419-2ab43580-75d1-11eb-9e20-f25a0dcfc6d4.png)
+
+# Managing Styles
+
+Each component has it's own style tags that can house either scoped styles for the component or global styles.
+
+Using scoped style tags does require more resources so a more effective way if possible is to be more specific with selectors, so scoped is not required.
+
+It is also good practice to within the assets folder have a global.css file for global styles.  The file is then imported into main.js:
+
+![Screenshot from 2021-02-23 12-48-35](https://user-images.githubusercontent.com/73107656/108845539-7668de00-75d5-11eb-9b85-a7f8cf0eda9d.png)
