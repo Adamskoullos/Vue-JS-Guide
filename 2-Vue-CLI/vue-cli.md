@@ -73,3 +73,24 @@ Using scoped style tags does require more resources so a more effective way if p
 It is also good practice to within the assets folder have a global.css file for global styles.  The file is then imported into main.js:
 
 ![Screenshot from 2021-02-23 12-48-35](https://user-images.githubusercontent.com/73107656/108845539-7668de00-75d5-11eb-9b85-a7f8cf0eda9d.png)
+
+Note that global styles can be overridden by a specific component. 
+
+# Passing data with props
+
+Data/props can be passed down the component tree, this allows data to be more dynamic and components to be more reusable. Also if multiple components use the same data, the data only needs to be defined in one place (A single source of truth).
+
+Props are passed into a component via it's `<tag>` within the `<template>`. A nice pattern to do this is by:
+
+1. We first need to pass the prop in via the parent component within the component tag.
+
+![Screenshot from 2021-02-23 13-44-09](https://user-images.githubusercontent.com/73107656/108852251-445b7a00-75dd-11eb-9856-4d20baad723a.png)
+
+2. We then need to accept the prop inside the component file within `<script>` tags, using the pattern in the image below.
+3. And lastly we use the prop by adding it within double curly braces within the `<template>` tags for that component also as in the image below.
+
+![Screenshot from 2021-02-23 13-45-31](https://user-images.githubusercontent.com/73107656/108852349-694fed00-75dd-11eb-814a-66b8c0dbe470.png)
+
+
+
+
