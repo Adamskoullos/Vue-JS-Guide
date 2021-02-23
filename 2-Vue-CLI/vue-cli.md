@@ -93,7 +93,7 @@ Props are passed into a component via it's `<tag>` within the `<template>`. Belo
 
 Multiple props can be passed in this way.
 
-This last image shows how the prop 'theme' has been passed down and accepted and then used change the divs class depending on the props value:
+This last image shows how the prop 'theme' has been passed down and accepted and then used to change the divs class depending on the props value:
 
 ![Screenshot from 2021-02-23 14-23-47](https://user-images.githubusercontent.com/73107656/108857229-ca2df400-75e2-11eb-89cf-0189e9dbdce9.png)
 
