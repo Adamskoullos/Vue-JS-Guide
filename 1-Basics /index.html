@@ -7,8 +7,22 @@
     <title>Document</title>
     <script src="https://unpkg.com/vue@next"></script>
     <style>
+        .base{
+            background: #ff5;
+            max-width: 960px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        
+        .trump{
+            background: #eee;
+            max-width: 960px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        
         .box{
-            padding:100px;
+            padding:10px;
             width:400px;
             text-align: center;
             background: #ddd;
@@ -20,6 +34,8 @@
 <body>
     <!--The Vue app now controls content within this div-->
     <div id="app">
+        <!--Dynamic binding to attributes - use the colon : -->
+        <a :href="url">Dynamic URL</a>
         <!--The template is host to dynamic data-->
         <h1 v-if="show">{{ title }} - {{ name }} - {{ strength }}</h1>
         <!-- v-on: or @ -->
@@ -36,6 +52,15 @@
         <div class="box" @mouseleave="handleEvent">mouseleave</div>
         <div class="box" @dblclick="handleEvent">double click</div>
         <div class="box" @mousemove="handleMousemove">position - {{ x }} {{ y }}</div>
+
+        <!--v-for cycle through array and render items to DOM-->
+        <!--v-for cycle through each obj in array and render-->
+        <!--if obj has prop trump with value of true add class of trump-->
+        <!--add click event listener that triggers toggleTrump method and takes in the obj (skill)-->
+        <div v-for="skill in filteredSkills" :class="{ trump: skill.trump }" class="base" @click="toggleTrump(skill)">
+            <h3>{{skill.name}}</h3>
+            <h3>{{skill.power}}</h3>
+        </div>
     </div>
     <script src="app.js"></script>
 </body>

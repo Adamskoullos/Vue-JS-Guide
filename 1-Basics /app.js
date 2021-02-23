@@ -6,12 +6,29 @@ const app = Vue.createApp({
     // We can present dynamic data by creating a function and returning an object
     data(){
       return {
+          url: `https://adamskoullos.github.io/TraderDashboards/`,
           title: `This is the title`,
           name: `Dynamic Dave`,
           strength: 10,
           show: true,
           x: 0,
-          y: 0
+          y: 0,
+          skills: [
+            {
+                name: `speed`,
+                power: 5,
+                trump: true
+            },
+            {
+                name: `strength`,
+                power: 20,
+                trump: true
+            },
+            {
+                name: `fighting`,
+                power: 10,
+                trump: false
+            }]
       }
     },
     // Place methods inside:
@@ -33,6 +50,22 @@ const app = Vue.createApp({
             this.x = e.offsetX
             this.y = e.offsetY
             console.log(this.x, this.y)
+        },
+        toggleTrump(skill){  
+            // Long hand option
+            // if(skill.trump){
+            //     console.log(skill.trump)
+            //     skill.trump = false
+            // } else{
+            //     skill.trump = true
+            // }
+            // Short hand option
+            skill.trump = !skill.trump       
+        }
+    },
+    computed:{
+        filteredSkills(){
+            return this.skills.filter(skill=> skill.trump)
         }
     }
 })
