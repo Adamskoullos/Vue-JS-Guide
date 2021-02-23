@@ -80,17 +80,16 @@ Note that global styles can be overridden by a specific component.
 
 Data/props can be passed down the component tree, this allows data to be more dynamic and components to be more reusable. Also if multiple components use the same data, the data only needs to be defined in one place (A single source of truth).
 
-Props are passed into a component via it's `<tag>` within the `<template>`. A nice pattern to do this is by:
+Props are passed into a component via it's `<tag>` within the `<template>`. Below is a nice pattern in which to do this:
 
-1. We first need to pass the prop in via the parent component within the component tag.
+1. First we add the data/props in the data object within the `<script>` tags in the parent component. Then we pass the prop in via the parent component within the component tag inside the `<template>` tags.  Notice how because the props are first returned from the data object we can use data bind on the props within the component tags making these values more dynamic. 
 
-![Screenshot from 2021-02-23 13-44-09](https://user-images.githubusercontent.com/73107656/108852251-445b7a00-75dd-11eb-9856-4d20baad723a.png)
+![Screenshot from 2021-02-23 13-57-05](https://user-images.githubusercontent.com/73107656/108853802-0eb79080-75df-11eb-9c72-33b37432f284.png)
 
 2. We then need to accept the prop inside the component file within `<script>` tags, using the pattern in the image below.
 3. And lastly we use the prop by adding it within double curly braces within the `<template>` tags for that component also as in the image below.
 
 ![Screenshot from 2021-02-23 13-45-31](https://user-images.githubusercontent.com/73107656/108852349-694fed00-75dd-11eb-814a-66b8c0dbe470.png)
 
-
-
+Multiple props can be passed in this way.
 
