@@ -35,8 +35,21 @@ When working with templates in Vue projects, we do not use querySelector, instea
 
 ![Screenshot from 2021-02-23 10-46-50](https://user-images.githubusercontent.com/73107656/108833379-a6f44c00-75c4-11eb-800e-4bfdfb9bb8b9.png)
 
-A above we first grab an element using the ref attribute and then we reference the element to work on it by using the following syntax(as shown above):
+Above we first grab an element using the ref attribute and then we reference the element to work on it by using the following syntax(as shown above):
 
 ```
 $refs.name
 ```
+
+An example would be to grab the element and then use a reference to it within a function that is triggered on a click event and change the class:
+
+![Screenshot from 2021-02-23 11-27-24](https://user-images.githubusercontent.com/73107656/108837419-1fa9d700-75ca-11eb-84a3-8c97abc4ada7.png)
+
+
+# Multiple Components
+
+When installing a Vue project from the Vue CLI, there is a standard structure to how all components are joined and connected through to index.html and ultimately rendered to the browser.
+
+The main gateway through to index.html is through main.js which is accepts components passed through from App.vue.  All components are exported and imported up through App.vue.  Here is an example visual of a component tree:
+
+![Screenshot from 2021-02-23 11-48-43](https://user-images.githubusercontent.com/73107656/108839537-1b32ed80-75cd-11eb-8fe4-17bef16ed01c.png)
