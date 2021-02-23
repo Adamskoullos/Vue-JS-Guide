@@ -53,3 +53,13 @@ When installing a Vue project from the Vue CLI, there is a standard structure to
 The main gateway through to index.html is through main.js which is accepts components passed through from App.vue.  All components are exported and imported up through App.vue.  Here is an example visual of a component tree:
 
 ![Screenshot from 2021-02-23 11-48-43](https://user-images.githubusercontent.com/73107656/108839537-1b32ed80-75cd-11eb-8fe4-17bef16ed01c.png)
+
+When using components there is a 3 stepped process required before we can use them:
+
+1. Import the module into App.vue
+2. Add the component to the components property within the exported object
+3. Add the component to the <template> within App.vue
+
+Below is an example of this:
+
+![Screenshot from 2021-02-23 12-17-46](https://user-images.githubusercontent.com/73107656/108842419-2ab43580-75d1-11eb-9e20-f25a0dcfc6d4.png)
