@@ -4,15 +4,13 @@ Then install the Vue CLI, note sudo is only for linux to command as admin:
 
 ```
 sudo npm install -g @vue/cli
-
 ```
 confirm Vue is correctly installed by checking the version:
 
 ```
 vue --version
-
 ```
-At this point Node, NPM and Vue is ready to go.
+At this point Node, NPM and Vue are ready to go.
 
 We use the Vue CLI to install all the components and dependencies that make up a core Vue project.  To do this we:
 
@@ -22,26 +20,23 @@ We use the Vue CLI to install all the components and dependencies that make up a
 
 ```
 vue create projectName
-
 ```
 4. Then cd into the new project directory
 
 ```
 cd projectName
-
 ```
-From here use the command: `code .` to open project in vs code if not already open.  Or open vs code and open new folder and go to folder location.  
+From here use the command: `code .` to open project in vs code if not already open.  Or open vs code > file > folder and go to folder location.  
 
-First thing to do is ush local repo to GitHub and publish. From there work as normal.
+First thing to do is push local repo to GitHub and publish. Then it's off to the races.
 
 # Grabbing elements to work on
 When working with templates in Vue projects, we do not use querySelector, instead we use the Vue ref attribute and give elements a ref name:
 
 ![Screenshot from 2021-02-23 10-46-50](https://user-images.githubusercontent.com/73107656/108833379-a6f44c00-75c4-11eb-800e-4bfdfb9bb8b9.png)
 
-So we grab an element using the ref attribute and then we reference the element to work on it by using the following syntax(as shown above):
+A above we first grab an element using the ref attribute and then we reference the element to work on it by using the following syntax(as shown above):
 
 ```
 $refs.name
-
 ```
