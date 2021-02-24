@@ -1,3 +1,17 @@
+### Quick Links:
+[Setting up a Vue project](#Setting-up-a-Vue-project)
+[Grabbing elements to work on](#Grabbing-elements-to-work-on)
+[Multiple Components](#Multiple-Components)
+[Managing Styles](#Managing-Styles)
+[Passing data with props](#Passing-data-with-props)
+[Emitting custom events](#Emitting-custom-events)
+[Event Modifiers](#Event-Modifiers)
+[Slots](#Slots)
+[Reusing the same modal component by passing in further template slots](#Reusing-the-same-modal-component-by-passing-in-further-template-slots)
+[Teleport](#Teleport)
+
+------------------------------------------------------------
+
 # Setting up a Vue project
 First make sure to have the latest version of Node and NPM installed. For debian linux users install NVM to do this and manage versions. A guide for this is [here](https://gist.github.com/SriVinayA/56335800e19a508c97bfa4f980a870cf)
 Then install the Vue CLI, note sudo is only for linux to command as admin:
