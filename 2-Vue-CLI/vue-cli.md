@@ -103,11 +103,11 @@ This last image shows how the prop 'theme' has been passed down and accepted and
 
 A custom event can be fired by a child component and listened to and acted on by the parent component.  In order to set this up we need to create a custom event and when triggered emit the event:
 
-In the example below the child component is closing a modal when the div is clicked.  On click a method in the child component is fired which emits a custom event up the component tree to its parent by using `$emit('customEvent)`.
+In the example below the child component is closing a modal when the div is clicked.  On click, a method in the child component is fired which emits a custom event up the component tree to its parent by using `$emit('customEvent)`.
 
-Then in the parent component the child component has a `<tag>` within the `<template>` tags and within the child component tags an event listener for the custom event is placed.  The callback is a method that is defined in the parent methods. Lets step through this pattern:
+Then in the parent component the child component has a `<tag>` within the `<template>` tags and within the child component tags an event listener for the custom event is placed.  The callback is a method that is defined in the parents methods. Lets step through this pattern:
 
-1. Set up a click event listener on the div which fires the callback
+1. Child component - Set up a click event listener on the div which fires the callback
 
 ![Screenshot from 2021-02-24 06-30-14](https://user-images.githubusercontent.com/73107656/108957662-cabd9d80-7669-11eb-903e-8f654919faec.png)
 
