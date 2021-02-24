@@ -122,3 +122,24 @@ Then in the parent component the child component has a `<tag>` within the `<temp
 4. Define the callback within the parent components methods
 
 ![Screenshot from 2021-02-24 06-36-45](https://user-images.githubusercontent.com/73107656/108958288-ad3d0380-766a-11eb-88f4-47da6494c8ff.png)
+
+
+# Event Modifiers
+
+We can access event modifiers by using the dot notation:
+
+`@click.self="function"`
+
+# Slots
+
+We use props to passing data such as arrays, strings or booleans into a component.  We use slots if we are passing more complex data in such as form templates and other structured HTML.
+
+There can be one default slot and multiple named slots.  Lets look at the pattern for this:
+
+1. Parent component - The child component now has an opening and closing tag within the `<template>` tags and any standard html used within is passed as the default slot.  Further named slots can be added by using the `<template>` tags inside the slot and using `v-slot:name` to name the slot.
+
+![Screenshot from 2021-02-24 08-09-46](https://user-images.githubusercontent.com/73107656/108967634-ad8fcb80-7677-11eb-9c83-b0b5d7653c3e.png)
+
+2. Child component - The default slot is added to the child component by simply adding `<slot>` tags.  Named slots are added with further `<slot>` tags which have the name attribute and the value of the specific slot name:
+
+![Screenshot from 2021-02-24 08-13-01](https://user-images.githubusercontent.com/73107656/108968011-20994200-7678-11eb-8a1f-4abc4717bcb3.png)
