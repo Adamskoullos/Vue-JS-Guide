@@ -162,4 +162,11 @@ In the example below:
 
 ![Screenshot from 2021-02-24 10-01-25](https://user-images.githubusercontent.com/73107656/108983905-4548e600-7687-11eb-9ecf-76f6d6a031bd.png)
 
-2. Child component - We use the same custom event 'close' to trigger different callbacks on each modal, so we only need the existing closeModal method in the child component.  
+2. Child component - We use the same custom event 'close' to trigger different callbacks on each modal, so we only need the existing closeModal method in the child component. 
+
+
+# Teleport
+
+We can move a component template to be displayed outside of the Vue app element within the HTML to be shown within another element within the HTML by adding `<teleport>` tags around the template slot in the App.vue component. We then add the 'to' attribute telling Vue where to display the template.  The value of this is any css selector.
+
+![Screenshot from 2021-02-24 13-19-10](https://user-images.githubusercontent.com/73107656/109006353-e729fc00-76a2-11eb-9f24-ddeda7078071.png)
