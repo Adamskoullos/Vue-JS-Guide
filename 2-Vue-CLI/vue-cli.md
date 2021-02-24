@@ -132,7 +132,7 @@ We can access event modifiers by using the dot notation:
 
 # Slots
 
-We use props to passing data such as arrays, strings or booleans into a component.  We use slots if we are passing more complex data in such as form templates and other structured HTML.
+We use props when passing data such as arrays, strings or booleans into a component.  We use slots if we are passing more complex data in such as form templates and other structured HTML.
 
 There can be one default slot and multiple named slots.  Lets look at the pattern for this:
 
