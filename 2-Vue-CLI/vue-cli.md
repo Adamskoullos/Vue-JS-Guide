@@ -28,7 +28,9 @@ cd projectName
 ```
 From here use the command: `code .` to open project in vs code if not already open.  Or open vs code > file > folder and go to folder location.  
 
-First thing to do is push local repo to GitHub and publish. Then it's off to the races.
+First thing to do is push local repo to GitHub and publish. 
+
+Then within the terminal spin up the local server `npm run serve` which provides a local host address that can then be copied and pasted into the browser.  Off to the races.
 
 # Grabbing elements to work on
 When working with templates in Vue projects, we do not use querySelector, instead we use the Vue ref attribute and give elements a ref name:
@@ -97,3 +99,6 @@ This last image shows how the prop 'theme' has been passed down and accepted and
 
 ![Screenshot from 2021-02-23 14-23-47](https://user-images.githubusercontent.com/73107656/108857229-ca2df400-75e2-11eb-89cf-0189e9dbdce9.png)
 
+# Emitting custom events
+
+A custom event can be fired by a child component and listened to and acted on by the parent component. 
