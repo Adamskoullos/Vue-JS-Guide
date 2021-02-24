@@ -1,13 +1,13 @@
 ### Quick Links:
-[Setting up a Vue project](#Setting-up-a-Vue-project)
-[Grabbing elements to work on](#Grabbing-elements-to-work-on)
-[Multiple Components](#Multiple-Components)
-[Managing Styles](#Managing-Styles)
-[Passing data with props](#Passing-data-with-props)
-[Emitting custom events](#Emitting-custom-events)
-[Event Modifiers](#Event-Modifiers)
-[Slots](#Slots)
-[Reusing the same modal component by passing in further template slots](#Reusing-the-same-modal-component-by-passing-in-further-template-slots)
+[Setting up a Vue project](#Setting-up-a-Vue-project)<br>
+[Grabbing elements to work on](#Grabbing-elements-to-work-on)<br>
+[Multiple Components](#Multiple-Components)<br>
+[Managing Styles](#Managing-Styles)<br>
+[Passing data with props](#Passing-data-with-props)<br>
+[Emitting custom events](#Emitting-custom-events)<br>
+[Event Modifiers](#Event-Modifiers)<br>
+[Slots](#Slots)<br>
+[Reusing the same modal component by passing in further template slots](#Reusing-the-same-modal-component-by-passing-in-further-template-slots)<br>
 [Teleport](#Teleport)
 
 ------------------------------------------------------------
