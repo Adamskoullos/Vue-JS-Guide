@@ -143,3 +143,23 @@ There can be one default slot and multiple named slots.  Lets look at the patter
 2. Child component - The default slot is added to the child component by simply adding `<slot>` tags.  Named slots are added with further `<slot>` tags which have the name attribute and the value of the specific slot name:
 
 ![Screenshot from 2021-02-24 08-13-01](https://user-images.githubusercontent.com/73107656/108968011-20994200-7678-11eb-8a1f-4abc4717bcb3.png)
+
+
+# Reusing the same modal component by passing in further template slots
+
+Once a template slot has been structured, the same component can use it and reuse it.  In the example below we build on the modal example from earlier, using the modal component template and passing a second template slot down from the parent:
+
+In the example below:
+
+1. Parent component - we first copy and paste the template slot and then alter as required.  In this case we are:
+    - Adding a second button to open the second modal
+    - Adding a toggle function for the second button within methods
+    - Adding the second method name in the v-if of the second modal
+    - And update the custom close event callback to trigger the toggle method to close the second modal
+    - And lastly adding a second showModalTwo property in the components returned object
+
+![Screenshot from 2021-02-24 10-00-37](https://user-images.githubusercontent.com/73107656/108983810-29dddb00-7687-11eb-8416-43eb67101602.png)
+
+![Screenshot from 2021-02-24 10-01-25](https://user-images.githubusercontent.com/73107656/108983905-4548e600-7687-11eb-9ecf-76f6d6a031bd.png)
+
+2. Child component - We use the same custom event 'close' to trigger different callbacks on each modal, so we only need the existing closeModal method in the child component.  
