@@ -31,3 +31,20 @@ We can work with checkboxes in two ways:
 ![Screenshot from 2021-02-25 13-27-59](https://user-images.githubusercontent.com/73107656/109160170-5cfa9a00-776d-11eb-8d25-fbaf98d40f44.png)
 
 ![Screenshot from 2021-02-25 13-28-27](https://user-images.githubusercontent.com/73107656/109160202-67b52f00-776d-11eb-9bf6-8049d0530642.png)
+
+
+# Keyboard events and modifiers
+
+We can set event listeners to keyboard events such as keyup, keydown etc and trigger methods as normal.  The below example shows a pattern that can be used to do this within Vue components.
+
+1. First set up an event listener in this case `@keyup` to the input and map it to a method.  Not the input already has a data bind to `tempSkills`, meaning each key stroke adds a to its string
+2. define the logic.  The example below does the following:
+    - If the `keyup` event is after a comma or space 
+    - and the skills array does not already include this skill
+    - the comma or space is chopped off the string and the string/skill is added to the skills array
+
+![Screenshot from 2021-02-25 14-32-49](https://user-images.githubusercontent.com/73107656/109169669-f464ea80-7777-11eb-8510-c15505cbaaf1.png)
+
+![Screenshot from 2021-02-25 14-33-12](https://user-images.githubusercontent.com/73107656/109169697-ffb81600-7777-11eb-8976-96aca91e418c.png)
+
+Up in the form, at the bottom of `<template>` a new `div` is added for each new skill.  This done via the `v-for` directive.  When ever a `v-for` is used it must be accompanied with a `key`.  Notice how the value used for the key is the skill itself and how the key has a data bind.  
