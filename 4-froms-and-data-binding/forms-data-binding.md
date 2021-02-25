@@ -48,4 +48,9 @@ We can set event listeners to keyboard events such as keyup, keydown etc and tri
 
 ![Screenshot from 2021-02-25 14-33-12](https://user-images.githubusercontent.com/73107656/109169697-ffb81600-7777-11eb-8976-96aca91e418c.png)
 
-Up in the form, at the bottom of `<template>` a new `div` is added for each new skill.  This is done via the `v-for` directive.  When ever a `v-for` is used it must be accompanied with a `key`.  Notice how the value used for the key is the skill itself and how the key has a data bind.  
+Up in the form, at the bottom of `<template>` a new `div` is added for each new skill.  This is done via the `v-for` directive.  When ever a `v-for` is used it must be accompanied with a `key`.  Notice how the value used for the key is the skill itself and how the key has a data bind. 
+
+# Form submission
+
+We don't need to use `preventDefault()` with Vue instead we use an event listener modifier `@submit.prevent`
+
