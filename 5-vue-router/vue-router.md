@@ -29,5 +29,9 @@ Using `<router-link>` tags for navigation links allows Vue to intercept and mana
 
 ![Screenshot from 2021-02-26 07-34-23](https://user-images.githubusercontent.com/73107656/109269938-2ec89900-7805-11eb-85a6-8e735e87d6d2.png)
 
+When we use `<router-link>` tags we can also use data binding, this is helpful incase if in the future the actual pathname to the view changes the link will still work and does not need to be changed.  This is because the `to` attribute is bound to the route name and not the route path:
+
+![Screenshot from 2021-02-26 08-04-02](https://user-images.githubusercontent.com/73107656/109272747-368a3c80-7809-11eb-9d1f-22307e716ae6.png)
+
 
 
