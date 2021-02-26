@@ -90,3 +90,13 @@ Catchall routes:
 ![Screenshot from 2021-02-26 12-34-21](https://user-images.githubusercontent.com/73107656/109300834-fa69d280-782e-11eb-88d1-6bc54926d175.png)
 
 
+# Forward/Backward navigation using browser history
+
+![Screenshot from 2021-02-26 12-52-40](https://user-images.githubusercontent.com/73107656/109302678-87159000-7831-11eb-8edb-f5782d4fb442.png)
+
+
+# Lazy loading 
+
+Lazy loading splits up a websites files so they are not all initially loaded. Components can be loaded in groups or when the router serves the view. The below example shows one way to lazy a single component so it will not be loaded until a user clicks the view:
+
+![Screenshot from 2021-02-26 13-02-56](https://user-images.githubusercontent.com/73107656/109303604-f475f080-7832-11eb-86b9-36b5da17fb86.png)
