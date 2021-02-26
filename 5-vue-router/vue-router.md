@@ -21,9 +21,13 @@ Thats the overview, lets dig deeper.
 
 # Router Links
 
-Using `<router-link>` tags for navigation links allows Vue to intercept and manage the routing to new views, which is key to preventing a page reload.  Under the hood Vue renders the html with `<a>` tags and also add classes:
+Using `<router-link>` tags for navigation links allows Vue to intercept and manage the routing to new views, which is key to preventing a page reload.  Under the hood Vue renders the html with `<a>` tags and also adds classes:
 
 ![Screenshot from 2021-02-26 07-28-28](https://user-images.githubusercontent.com/73107656/109269323-3e93ad80-7804-11eb-851d-5a40e4e5b309.png)
+
+![Screenshot from 2021-02-26 07-34-08](https://user-images.githubusercontent.com/73107656/109269936-2c663f00-7805-11eb-8489-5519af739bcb.png)
+
+![Screenshot from 2021-02-26 07-34-23](https://user-images.githubusercontent.com/73107656/109269938-2ec89900-7805-11eb-85a6-8e735e87d6d2.png)
 
 
 
