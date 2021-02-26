@@ -50,16 +50,23 @@ Organising components in this way makes a project very modular and easy to maint
 
 When routing to sub-views we use route parameters.  Typically the route parameter used is the `:id` of the sub-view, this is coded in a dynamic way `/jobs/:id`.
 
-The way that it become dynamic is in the link to the sub-view from within the parent component.  Again the link uses the `<router-link>` tags, the route is to the route object `name` and the tag also has the params attribute. This is the key part, where the route parameter is mapped dynamically to the id of the sub-view.  
+The way that it becomes dynamic is in the link to the sub-view from within the parent component.  Again the link uses the `<router-link>` tags, the route is to the route object `name` and the tag also has the params attribute. This is the key part, where the route parameter is mapped dynamically to the id of the sub-view.  
 
 We can access the components route object data within the component by using the `$route`.  
 
 1. index.js - Set up the route object in the routes array, using the dynamic slug `:id` 
 2. index.js - Import the component into index.js
 
-3. Sub-view component - Store the id of the current view within the returned data object we can then use the `{{ id }}` as a dynamic filed within the template:
+3. Sub-view component - Store the id of the current view within the returned data object we can then use the `{{ id }}` as a dynamic field within the template:
 
 ![Screenshot from 2021-02-26 11-15-39](https://user-images.githubusercontent.com/73107656/109293639-fa180a00-7823-11eb-8202-8ef1f6ffd374.png)
+
+We can accept the `props: id` into the sub-view component by using the folling pattern instead of using the `data()` function as long as we set the `props: true` within index.js:
+
+![Screenshot from 2021-02-26 11-46-50](https://user-images.githubusercontent.com/73107656/109296704-ad82fd80-7828-11eb-9ddc-e469ea05884f.png)
+
+![Screenshot from 2021-02-26 11-46-32](https://user-images.githubusercontent.com/73107656/109296707-aeb42a80-7828-11eb-9dc7-6e54b6e6fda0.png)
+
 
 4. Parent view - Set up a router link from the parent view to the sub-view:
     - The `<router-link>` tags to include `:to="{ name: 'routeObjectName' }"` pointing to the components route name
