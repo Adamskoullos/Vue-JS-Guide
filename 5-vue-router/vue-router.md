@@ -61,7 +61,7 @@ We can access the components route object data within the component by using the
 
 ![Screenshot from 2021-02-26 11-15-39](https://user-images.githubusercontent.com/73107656/109293639-fa180a00-7823-11eb-8202-8ef1f6ffd374.png)
 
-We can accept the `props: id` into the sub-view component by using the folling pattern instead of using the `data()` function as long as we set the `props: true` within index.js:
+We can accept the `props: id` into the sub-view component by using the following pattern instead of using the `data()` function as long as we set the `props: true` within index.js:
 
 ![Screenshot from 2021-02-26 11-46-50](https://user-images.githubusercontent.com/73107656/109296704-ad82fd80-7828-11eb-9ddc-e469ea05884f.png)
 
