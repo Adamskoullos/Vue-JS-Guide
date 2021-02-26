@@ -6,11 +6,13 @@ Component files now make up parts of a view/page and are imported into views whe
 
 Views are then imported into the router (index.js) the main switch board and then each view is routed through to App.vue to be displayed. 
 
+Within the router switchboard (index.js) each view has a rout set up within the router array.  The router is then exported.
+
 To activate the router it is imported into main.js.  We create the App, then add the router, then mount the App to the html element. This part comes pre-configured when vue router is included in the build. 
 
-Thats the set-up, when a nav link triggers the router, the specific view is injected into the App.vue `<template>` within a `<router>` tag.  
+When a nav link triggers the router, the specific view is injected into the App.vue `<template>` within the `<router-view/>` tag.  
 
-Therefore default html that is present on all pages/views for example a navigation bar is directly placed into the App.vue template and any dynamically injected html is added and removed by the router via the `<router>` tag.
+Therefore default html that is present on all pages/views for example a navigation bar can be directly placed into the App.vue template with straight html or a through a component tag and any dynamically injected html from views is added and removed by the router via the `<router-view>` tag. Note the image below shows the navigation html uses `<router-link>` tags instead of a traditional ul, li set-up:
 
 ![Screenshot from 2021-02-26 06-09-05](https://user-images.githubusercontent.com/73107656/109262310-3aae5e00-77f9-11eb-800f-e207693523db.png)
 
