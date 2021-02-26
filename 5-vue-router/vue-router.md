@@ -46,4 +46,27 @@ The way components are organised within a project is subjective and the size and
 Organising components in this way makes a project very modular and easy to maintain and scale.
 
 
+# Setting up Sub-Views and Route Parameters
 
+When routing to sub-views we use route parameters.  Typically the route parameter used is the `:id` of the sub-view, this is coded in a dynamic way `/jobs/:id`.
+
+The way that it become dynamic is in the link to the sub-view from within the parent component.  Again the link uses the `<router-link>` tags, the route is to the route object `name` and the tag also has the params attribute. This is the key part, where the route parameter is mapped dynamically to the id of the sub-view.  
+
+We can access the components route object data within the component by using the `$route`.  
+
+1. index.js - Set up the route object in the routes array, using the dynamic slug `:id` 
+2. index.js - Import the component into index.js
+
+3. Sub-view component - Store the id of the current view within the returned data object we can then use the `{{ id }}` as a dynamic filed within the template:
+
+![Screenshot from 2021-02-26 11-15-39](https://user-images.githubusercontent.com/73107656/109293639-fa180a00-7823-11eb-8202-8ef1f6ffd374.png)
+
+4. Parent view - Set up a router link from the parent view to the sub-view:
+    - The `<router-link>` tags to include `:to="{ name: 'routeObjectName' }"` pointing to the components route name
+    - We also want to pass through the `params` attribute, in order to dynamically target each data object id. This dynamically adds the id value as the sub-view slug.  An image is powerful here:
+
+![Screenshot from 2021-02-26 11-30-47](https://user-images.githubusercontent.com/73107656/109295102-14eb7e00-7826-11eb-968d-1256fddaeee3.png)
+
+The params id is mapped to job.id:
+
+![Screenshot from 2021-02-26 11-33-20](https://user-images.githubusercontent.com/73107656/109295310-727fca80-7826-11eb-85be-5a1aa03a6564.png)
