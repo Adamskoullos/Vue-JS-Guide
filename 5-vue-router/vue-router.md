@@ -77,3 +77,16 @@ We can accept the `props: id` into the sub-view component by using the following
 The params id is mapped to job.id:
 
 ![Screenshot from 2021-02-26 11-33-20](https://user-images.githubusercontent.com/73107656/109295310-727fca80-7826-11eb-85be-5a1aa03a6564.png)
+
+
+# 404 Page and Redirects
+
+Redirect:
+
+![Screenshot from 2021-02-26 12-25-46](https://user-images.githubusercontent.com/73107656/109299937-c4781e80-782d-11eb-9f40-988b0e4af7f0.png)
+
+Catchall routes:
+
+![Screenshot from 2021-02-26 12-34-21](https://user-images.githubusercontent.com/73107656/109300834-fa69d280-782e-11eb-88d1-6bc54926d175.png)
+
+
