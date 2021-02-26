@@ -12,7 +12,7 @@ To activate the router it is imported into main.js.  We create the App, then add
 
 When a nav link triggers the router, the specific view is injected into the App.vue `<template>` within the `<router-view/>` tag.  
 
-Therefore default html that is present on all pages/views for example a navigation bar can be directly placed into the App.vue template with straight html or a through a component tag and any dynamically injected html from views is added and removed by the router via the `<router-view>` tag. Note the image below shows the navigation html uses `<router-link>` tags instead of a traditional ul, li set-up:
+Therefore default html that is present on all pages/views for example a navigation bar can be directly placed into the App.vue template with straight html or through a component tag and any dynamically injected html from views is added and removed by the router via the `<router-view>` tag. Note the image below shows the navigation html uses `<router-link>` tags instead of a traditional ul, li set-up:
 
 ![Screenshot from 2021-02-26 06-09-05](https://user-images.githubusercontent.com/73107656/109262310-3aae5e00-77f9-11eb-800f-e207693523db.png)
 
