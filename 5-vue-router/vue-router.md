@@ -33,5 +33,17 @@ When we use `<router-link>` tags we can also use data binding, this is helpful i
 
 ![Screenshot from 2021-02-26 08-04-02](https://user-images.githubusercontent.com/73107656/109272747-368a3c80-7809-11eb-9d1f-22307e716ae6.png)
 
+# Folder Structure
+
+The way components are organised within a project is subjective and the size and complexity of the project will determine this. However the below model appears to be a best practice structure to maintain scalable projects:
+
+1. Individual reusable components which are not views in themselves to be placed within the components folder, such as navigation, footer etc
+
+2. Views that do not have any nested sub-views to placed directly within the views folder
+
+3. Views that have sub-views are placed with any sub-views within a sub-folder within the views folder
+
+Organising components in this way makes a project very modular and easy to maintain and scale.
+
 
 
