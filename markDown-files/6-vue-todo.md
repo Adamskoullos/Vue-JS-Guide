@@ -41,6 +41,7 @@ Parent Component, the view where our child component is to be nested:
 ![Screenshot from 2021-02-28 02-01-32](https://user-images.githubusercontent.com/73107656/109405490-ef1ac200-7968-11eb-8464-a3a116793032.png)
 
 Child component:
+
 6. Accept any props that are passed down, by adding them to props in the data object
 
 7. Create template:
@@ -55,4 +56,16 @@ Child component:
     - Add method to methods using the toggle pattern
 
 ![Screenshot from 2021-02-28 02-28-46](https://user-images.githubusercontent.com/73107656/109405904-b4b32400-796c-11eb-96c5-ae04156a8c51.png)
+
+9. Adding icons for Crud actions
+
+    - Set up the link from this url for material icons: `https://google.github.io/material-design-icons/`
+    - Scroll down to `icon font for the web` grab the link and place in the head of index.html
+    - Grab icons to be used and copy code into the title div
+    - Position the items in the div using flexbox
+    - style the individual icons using the material-design class
+
+Thats the basic template for the component we now move on to work on the functionality of the crud operations
+
+# Crud
 
