@@ -65,6 +65,8 @@ Child component:
     - Position the items in the div using flexbox
     - style the individual icons using the material-design class
 
+![Screenshot from 2021-02-28 03-55-18](https://user-images.githubusercontent.com/73107656/109407448-cf8b9580-7978-11eb-8340-46b9b1dd115e.png)
+
 Thats the basic template for the component we now move on to work on the functionality of the crud operations
 
 # Crud
