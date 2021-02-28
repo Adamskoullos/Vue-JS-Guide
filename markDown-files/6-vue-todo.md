@@ -29,25 +29,30 @@ This is to be a reusable component, located within the components folder to be a
 1. Create new component in components folder
 
 Parent Component, the view where our child component is to be nested:
+
 2. Add the component tag within the template of the view/parent component 
+
 3. Import the component 
+
 4. Add the component to the components object 
+
 5. Pass in and bind any props to be accessible within the child component. In this case the task object is being passed via props.  We get access to this from the `v-for="task in tasks"`  
 
 ![Screenshot from 2021-02-28 02-01-32](https://user-images.githubusercontent.com/73107656/109405490-ef1ac200-7968-11eb-8464-a3a116793032.png)
 
 Child component:
 6. Accept any props that are passed down, by adding them to props in the data object
+
 7. Create template:
-- Add outer div for styling the container
-- Add inner div1 to house the `{{  title }}` and manage action buttons
-- Add inner div2 below div1 to house `{{ details }}`
+    - Add outer div for styling the container
+    - Add inner div1 to house the `{{  title }}` and manage action buttons
+    - Add inner div2 below div1 to house `{{ details }}`
 
 8. Add functionality to open and close details div from clicking title div:
-- Add `v-if` to details div to only show if `showTaskDetails` is true
-- Add `showTaskDetails` to data object, with initial value of false
-- Add `@click="showDetails"` to title div
-- Add method to methods using the toggle pattern
+    - Add `v-if` to details div to only show if `showTaskDetails` is true
+    - Add `showTaskDetails` to data object, with initial value of false
+    - Add `@click="showDetails"` to title div
+    - Add method to methods using the toggle pattern
 
 ![Screenshot from 2021-02-28 02-28-46](https://user-images.githubusercontent.com/73107656/109405904-b4b32400-796c-11eb-96c5-ae04156a8c51.png)
 
