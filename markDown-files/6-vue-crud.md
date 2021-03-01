@@ -131,3 +131,34 @@ Next update local data (parent tasks array) to match database
 ![Screenshot from 2021-03-01 04-46-39](https://user-images.githubusercontent.com/73107656/109453139-34162580-7a49-11eb-9cb0-ff7c19781465.png)
 
 ![Screenshot from 2021-03-01 04-46-55](https://user-images.githubusercontent.com/73107656/109453144-36787f80-7a49-11eb-9be6-97f892309073.png)
+
+
+## PUT request - Add new task
+
+1. Add new view `AddTask.vue`
+
+2. Create form adding `v-model` to connect data properties to input fields
+
+3. Add data object properties
+
+4. Add `@submit.prevent="handleSubmit"` event listener, note the event modifier preventing the default page reload
+
+5. Add the `handleSubmit()` method to methods, for now just console.log('to prove') and come back to this once the router is set up
+
+The below image shows the work so far within the new view `AddTask.vue`:
+
+![Screenshot from 2021-03-01 09-50-25](https://user-images.githubusercontent.com/73107656/109480553-91bf6780-7a73-11eb-9c7a-6f87ab704f1a.png)
+
+Now we move over the index.js to set up the router:
+
+6. Set up router (index.js)
+    - Add route
+    - Import `AddTask.vue` view
+
+ ![Screenshot from 2021-03-01 09-54-58](https://user-images.githubusercontent.com/73107656/109481050-32158c00-7a74-11eb-9b59-46972e4df6a6.png)
+
+ Now for a quick test to prove so far:
+    - The route path is working and the form is being displayed
+    - The `v-model` is set up and and the method is working by submiting and `console.log(this.title, this.details)` 
+
+![Screenshot from 2021-03-01 09-55-53](https://user-images.githubusercontent.com/73107656/109481155-56716880-7a74-11eb-9e44-61b2ebcb9980.png)
