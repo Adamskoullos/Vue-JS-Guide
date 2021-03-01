@@ -133,7 +133,7 @@ Next update local data (parent tasks array) to match database
 ![Screenshot from 2021-03-01 04-46-55](https://user-images.githubusercontent.com/73107656/109453144-36787f80-7a49-11eb-9be6-97f892309073.png)
 
 
-## PUT request - Add new task
+## POST request - Add new task
 
 1. Add new view `AddTask.vue`
 
@@ -163,3 +163,19 @@ Now we move over the index.js to set up the router:
 - The `v-model` is set up and and the method is working by submitting the form and `console.log(this.title, this.details)` 
 
 ![Screenshot from 2021-03-01 09-55-53](https://user-images.githubusercontent.com/73107656/109481155-56716880-7a74-11eb-9e44-61b2ebcb9980.png)
+
+Now we can get back to the handleSubmit method and work on the logic. Make a POST request and sync the Home.view (task list) with the database.  Note: we do not need to attach an id as the JSON server or other database will automatically provide a unique id for each new object.
+
+7. Create the new data object to be posted to the database, the values to be filled dynamically
+
+8. Add a fetch POST request to the method
+
+9. Then redirect the user to the Home.vue to see the task list and the new task.  This is done by using `this.$router.push('/')` to push to the home page route.  
+
+10. Then lastly add a `.catch`
+
+![Screenshot from 2021-03-01 10-57-34](https://user-images.githubusercontent.com/73107656/109488043-f29f6d80-7a7c-11eb-92cf-3cdffc2f28d5.png)
+
+![Screenshot from 2021-03-01 10-58-47](https://user-images.githubusercontent.com/73107656/109488200-24b0cf80-7a7d-11eb-8a13-4e7366ab6fa7.png)
+
+![Screenshot from 2021-03-01 10-59-00](https://user-images.githubusercontent.com/73107656/109488211-27abc000-7a7d-11eb-9723-4b75c022a7a7.png)
