@@ -77,7 +77,7 @@ Thats the basic template for the component we now move on to work on the functio
 
 2. Add click event to delete icon
 
-3. Add method to methods to remove the task from the data base and also emit the delete event up to the parent to update the tasks view:
+3. Add method to methods to remove the task from the data base and also emit the delete event up to the parent to update the home view:
     - Remove task from database by making a delete request to the json server: 
 
 ![Screenshot from 2021-03-01 01-32-06](https://user-images.githubusercontent.com/73107656/109441722-f48e1000-7a2d-11eb-8c26-27ad6ddd1a04.png)
@@ -96,4 +96,6 @@ Thats the basic template for the component we now move on to work on the functio
 
 The above pattern accepts the emitted task id, then uses the filter method to cycle through the tasks array.  Each task in the tasks array that does not have the id, is added to the new array which is reassigned to the tasks array. The task with the id is excluded.  This process updates the tasks that are rendered to the DOM.
 
-So no the data base and browser have been update.
+So now the data base and browser have been update.
+
+## Patch request to update a task to complete
