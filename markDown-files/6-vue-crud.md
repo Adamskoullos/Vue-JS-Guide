@@ -71,7 +71,7 @@ Thats the basic template for the component we now move on to work on the functio
 
 # Crud
 
-## Delete request
+## DELETE request
 
 1. Store the dynamic endpoint in simple variable within data object to make it quick and easy to reuse for each request `uri: http://localhost:3000/tasks/ + this.task.id`
 
@@ -98,4 +98,15 @@ The above pattern accepts the emitted task id, then uses the filter method to cy
 
 So now the data base and browser have been update.
 
-## Patch request to update a task to complete
+## PATCH request to update a task to complete
+
+When we update all or part of an existing data object we need to send a fully structured fetch request which also includes `headers` and `body` properties.  The headers state that the content sent is json and the body includes an object with only the key/value pairs to be updated.  The object is wrapped turning the object into json:
+
+1. Send PATCH request:
+    - Add a `@click` to the complete icon
+    - Add a the method with the PATCH request
+
+The below pattern is toggling a boolean 
+
+![Screenshot from 2021-03-01 02-59-41](https://user-images.githubusercontent.com/73107656/109446770-32913100-7a3a-11eb-93ab-2ece35c04919.png)
+
