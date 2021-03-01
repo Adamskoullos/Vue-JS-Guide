@@ -164,7 +164,7 @@ Now we move over the index.js to set up the router:
 
 ![Screenshot from 2021-03-01 09-55-53](https://user-images.githubusercontent.com/73107656/109481155-56716880-7a74-11eb-9e44-61b2ebcb9980.png)
 
-Now we can get back to the handleSubmit method and work on the logic. Make a POST request and sync the Home.view (task list) with the database.  Note: we do not need to attach an id as the JSON server or other database will automatically provide a unique id for each new object.
+Now we can get back to the handleSubmit method and work on the logic. Make a POST request and redirect the user.  Note: we do not need to attach an id as the JSON server or other database will automatically provide a unique id for each new object.
 
 7. Create the new data object to be posted to the database, the values to be filled dynamically
 
