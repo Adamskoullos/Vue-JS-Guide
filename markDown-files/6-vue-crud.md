@@ -158,7 +158,8 @@ Now we move over the index.js to set up the router:
  ![Screenshot from 2021-03-01 09-54-58](https://user-images.githubusercontent.com/73107656/109481050-32158c00-7a74-11eb-9b59-46972e4df6a6.png)
 
  Now for a quick test to prove so far:
-    - The route path is working and the form is being displayed
-    - The `v-model` is set up and and the method is working by submiting and `console.log(this.title, this.details)` 
+
+- The route path is working and the form is being displayed
+- The `v-model` is set up and and the method is working by submitting the form and `console.log(this.title, this.details)` 
 
 ![Screenshot from 2021-03-01 09-55-53](https://user-images.githubusercontent.com/73107656/109481155-56716880-7a74-11eb-9e44-61b2ebcb9980.png)
