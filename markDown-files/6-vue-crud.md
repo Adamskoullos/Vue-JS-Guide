@@ -179,3 +179,26 @@ Now we can get back to the handleSubmit method and work on the logic. Make a POS
 ![Screenshot from 2021-03-01 10-58-47](https://user-images.githubusercontent.com/73107656/109488200-24b0cf80-7a7d-11eb-8a13-4e7366ab6fa7.png)
 
 ![Screenshot from 2021-03-01 10-59-00](https://user-images.githubusercontent.com/73107656/109488211-27abc000-7a7d-11eb-9723-4b75c022a7a7.png)
+
+## PUT request - Edit task
+
+
+## Navbar component
+
+Create separate component to be nested within the template tags of App.vue. This way the component will be present with all views.
+
+1. Create `Navbar.vue` within the components folder
+
+2. Structure the navbar template and add the routes for each link using the route name: 
+
+![Screenshot from 2021-03-01 13-27-37](https://user-images.githubusercontent.com/73107656/109503218-e83b9e80-7a91-11eb-9c0e-0e8a57c98787.png)
+
+**App.vue:**
+
+3. Add the Navbar component to the root component (App.vue):
+
+    - Add Navbar tag to App.vue template
+    - Import Navbar
+    - Add the Navbar component within components within the export default object
+
+![Screenshot from 2021-03-01 13-35-51](https://user-images.githubusercontent.com/73107656/109504100-0e157300-7a93-11eb-9bb2-4f1f8327e41b.png)
