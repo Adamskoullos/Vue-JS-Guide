@@ -49,13 +49,13 @@ Child component:
     - Add inner div1 to house the `{{  title }}` and manage action buttons
     - Add inner div2 below div1 to house `{{ details }}`
 
-8. Add functionality to open and close details div from clicking title div:
+8. Add functionality to open and close details div from clicking `h2` title:
     - Add `v-if` to details div to only show if `showTaskDetails` is true
     - Add `showTaskDetails` to data object, with initial value of false
-    - Add `@click="showDetails"` to title div
+    - Add `@click="showDetails"` to title `h2`
     - Add method to methods using the toggle pattern
 
-![Screenshot from 2021-02-28 02-28-46](https://user-images.githubusercontent.com/73107656/109405904-b4b32400-796c-11eb-96c5-ae04156a8c51.png)
+![Screenshot from 2021-03-01 04-42-26](https://user-images.githubusercontent.com/73107656/109452879-a3d7e080-7a48-11eb-90cf-ed43e647b1dc.png)
 
 9. Adding icons for Crud actions
 
@@ -110,3 +110,24 @@ The below pattern is toggling a boolean
 
 ![Screenshot from 2021-03-01 02-59-41](https://user-images.githubusercontent.com/73107656/109446770-32913100-7a3a-11eb-93ab-2ece35c04919.png)
 
+Next update local data (parent tasks array) to match database
+
+2. Add custom event `$emit('complete')` and pass up the task id
+
+![Screenshot from 2021-03-01 03-43-52](https://user-images.githubusercontent.com/73107656/109449562-b51cef00-7a40-11eb-8996-aacbae99333a.png)
+
+3. Add a listener for the custom event (parent component template, inside child component tag)
+
+![Screenshot from 2021-03-01 03-51-45](https://user-images.githubusercontent.com/73107656/109449867-776c9600-7a41-11eb-845c-68ea2de25aeb.png)
+
+4. Add the method to update/toggle the task.complete value
+
+![Screenshot from 2021-03-01 04-16-16](https://user-images.githubusercontent.com/73107656/109451226-e1d30580-7a44-11eb-808e-d3ff83115ed9.png)
+
+5. Add a dynamic `:class="{ complete: task.complete }"` to toggle the class `.complete` when complete is true.  Add the class and change the left border to green when complete:
+
+![Screenshot from 2021-03-01 04-46-18](https://user-images.githubusercontent.com/73107656/109453132-2f517180-7a49-11eb-83b6-eb4b4587e040.png)
+
+![Screenshot from 2021-03-01 04-46-39](https://user-images.githubusercontent.com/73107656/109453139-34162580-7a49-11eb-9cb0-ff7c19781465.png)
+
+![Screenshot from 2021-03-01 04-46-55](https://user-images.githubusercontent.com/73107656/109453144-36787f80-7a49-11eb-9be6-97f892309073.png)
