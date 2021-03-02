@@ -303,7 +303,7 @@ This is how the FilterNav and Home components look so far:
 
 - Accept the prop within props inside the FilterNav component
 
-![Screenshot from 2021-03-02 11-57-43](https://user-images.githubusercontent.com/73107656/109645271-81c88600-7b4e-11eb-86b8-eaf48ce366a4.png)
+![Screenshot from 2021-03-02 13-11-35](https://user-images.githubusercontent.com/73107656/109653341-d53fd180-7b58-11eb-9fec-a8219173defc.png)
 
 - Add conditional class to each filter tab to give the clicked filter the `active` class
 
