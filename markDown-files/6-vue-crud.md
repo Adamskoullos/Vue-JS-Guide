@@ -297,19 +297,34 @@ This is how the FilterNav and Home components look so far:
 
 4. Modify the FilterNav tabs to show the active filter
 
-- Send the value of the prop `current` back down to the child component (FilterNav) so we can modify the buttons to show the active tab. We can call this prop what ever we like.  I have called it current in the example below. Note that we ned to bind the prop to use it:
+- Send the value of the prop `current` back down to the child component (FilterNav) so we can modify the buttons to show the active tab. We can call this prop what ever we like.  I have called it current in the example below. Note that we need to bind the prop to use it:
 
 ![Screenshot from 2021-03-02 11-49-03](https://user-images.githubusercontent.com/73107656/109644368-4d07ff00-7b4d-11eb-839c-cb549bb49220.png)
 
-- Accept the prop within props inside the FilterNav component
+- Accept the prop within props inside the FilterNav component. Now we have access to `current` within the template: 
 
 ![Screenshot from 2021-03-02 13-11-35](https://user-images.githubusercontent.com/73107656/109653341-d53fd180-7b58-11eb-9fec-a8219173defc.png)
 
-- Add conditional class to each filter tab to give the clicked filter the `active` class
+- Add conditional class to each filter tab to give the clicked filter the `active` class:
 
 ![Screenshot from 2021-03-02 12-03-29](https://user-images.githubusercontent.com/73107656/109645850-51351c00-7b4f-11eb-9f26-921bc88e7908.png)
 
 Above, we are data binding to the passed in prop `current` and setting the class `active` to the button/tab that matches the current value of `current`.
+
+Now the the class `active` is being assigned to the current filter, but we still need to use the value of `current` within the Home component to only display the relevant tasks. To do this we will use a computed property. We use a computed property when we want to alter the way we display existing data, but without mutating the data.  We use a method if we want to create a new array or object and change the data.  
+
+1. Create a computed property object and add a new computed property `filteredTasks`, we need to return a value for the computed property to take effect. The returned value is the filtered array leaving the original array `tasks` un touched and the computed property array dynamically changes as `tasks` changes
+
+2. To use the computed property we swap the original array out for the computed property within the `v-for="task in filteredTasks"`.  Below is the pattern:
+
+![Screenshot from 2021-03-02 16-05-18](https://user-images.githubusercontent.com/73107656/109677015-26f45600-7b71-11eb-8308-494b8d1cb2ff.png)
+
+![Screenshot from 2021-03-02 16-05-37](https://user-images.githubusercontent.com/73107656/109677033-29ef4680-7b71-11eb-9aee-fea81681a6dd.png)
+
+Now instead of looping through and rendering the tasks array, we now loop through and render the tasks that are in the filteredTasks array. 
+
+
+
 
 
 
