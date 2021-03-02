@@ -259,9 +259,10 @@ So now the user has made their changes and hits the update submit button, we nee
 
 ![Screenshot from 2021-03-02 08-12-47](https://user-images.githubusercontent.com/73107656/109618238-35ba1900-7b2f-11eb-8b8e-477307f55856.png)
 
-![Screenshot from 2021-03-02 08-13-04](https://user-images.githubusercontent.com/73107656/109618254-394da000-7b2f-11eb-95ab-0dbed6403e7a.png)
+![Screenshot from 2021-03-02 08-25-24](https://user-images.githubusercontent.com/73107656/109619638-eecd2300-7b30-11eb-9075-08d166db1bd9.png)
 
 The complete EditTask.vue component  below:
 
-![Screenshot from 2021-03-02 08-13-34](https://user-images.githubusercontent.com/73107656/109618265-3c489080-7b2f-11eb-9094-36b9c0fc7c40.png)
+![Screenshot from 2021-03-02 08-25-56](https://user-images.githubusercontent.com/73107656/109619654-f260aa00-7b30-11eb-9a75-f6ca9dca7af9.png)
+
 
