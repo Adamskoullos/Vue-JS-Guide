@@ -180,7 +180,30 @@ Now we can get back to the handleSubmit method and work on the logic. Make a POS
 
 ![Screenshot from 2021-03-01 10-59-00](https://user-images.githubusercontent.com/73107656/109488211-27abc000-7a7d-11eb-9723-4b75c022a7a7.png)
 
-## PUT request - Edit task
+
+## Navbar component
+
+Create separate component to be nested within the template tags of App.vue. This way the component will be present with all views.
+
+1. Create `Navbar.vue` within the components folder
+
+2. Structure the navbar template and add the routes for each link using the route name: 
+
+![Screenshot from 2021-03-01 13-27-37](https://user-images.githubusercontent.com/73107656/109503218-e83b9e80-7a91-11eb-9c0e-0e8a57c98787.png)
+
+**App.vue:**
+
+3. Add the Navbar component to the root component (App.vue):
+
+    - Add Navbar tag to App.vue template
+    - Import Navbar
+    - Add the Navbar component within components within the export default object
+
+![Screenshot from 2021-03-01 13-35-51](https://user-images.githubusercontent.com/73107656/109504100-0e157300-7a93-11eb-9bb2-4f1f8327e41b.png)
+
+
+
+## Edit and Update tasks
 
 We will have a separate edit view component that opens when the task edit icon is clicked that pre-populates with the existing data values by using v-model two way data bind:
 
@@ -224,24 +247,21 @@ This is a get request so there is no method required. We get the data, turn it i
 
 ![Screenshot from 2021-03-02 07-15-00](https://user-images.githubusercontent.com/73107656/109612023-056e7c80-7b27-11eb-866c-dba0b287f104.png)
 
+So now the user has made their changes and hits the update submit button, we need to handle this and make a POST fetch request and also redirect them back to the Home.view where they can see their new changes:
 
+## PATCH request
 
-## Navbar component
+1. Add a submit handler to update the task
 
-Create separate component to be nested within the template tags of App.vue. This way the component will be present with all views.
+2. Make a fetch request to update the database
 
-1. Create `Navbar.vue` within the components folder
+3. Redirect the user back to the Home.vue where all the tasks are
 
-2. Structure the navbar template and add the routes for each link using the route name: 
+![Screenshot from 2021-03-02 08-12-47](https://user-images.githubusercontent.com/73107656/109618238-35ba1900-7b2f-11eb-8b8e-477307f55856.png)
 
-![Screenshot from 2021-03-01 13-27-37](https://user-images.githubusercontent.com/73107656/109503218-e83b9e80-7a91-11eb-9c0e-0e8a57c98787.png)
+![Screenshot from 2021-03-02 08-13-04](https://user-images.githubusercontent.com/73107656/109618254-394da000-7b2f-11eb-95ab-0dbed6403e7a.png)
 
-**App.vue:**
+The complete EditTask.vue component  below:
 
-3. Add the Navbar component to the root component (App.vue):
+![Screenshot from 2021-03-02 08-13-34](https://user-images.githubusercontent.com/73107656/109618265-3c489080-7b2f-11eb-9094-36b9c0fc7c40.png)
 
-    - Add Navbar tag to App.vue template
-    - Import Navbar
-    - Add the Navbar component within components within the export default object
-
-![Screenshot from 2021-03-01 13-35-51](https://user-images.githubusercontent.com/73107656/109504100-0e157300-7a93-11eb-9bb2-4f1f8327e41b.png)
