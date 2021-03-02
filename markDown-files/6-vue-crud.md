@@ -182,6 +182,49 @@ Now we can get back to the handleSubmit method and work on the logic. Make a POS
 
 ## PUT request - Edit task
 
+We will have a separate edit view component that opens when the task edit icon is clicked that pre-populates with the existing data values by using v-model:
+
+1. Add new EditTask.vue to the views folder and add an `<h1>` for now
+
+2. index.js - Add the route for the EditTask.vue and import the file. Note the path to have `/:id` to dynamically attach the id of the task.  This is used as the params key within the router-link.
+
+![Screenshot from 2021-03-02 06-27-35](https://user-images.githubusercontent.com/73107656/109607616-6777b380-7b20-11eb-9d8f-879f06e7dfad.png)
+
+3. SingTask.vue - Make the task edit icon a link to the edit view and pass in the route parameter for the task:
+
+    - Wrap the edit icon `<span>` tag with a `<router-link>` tag 
+    - Add the `:to=""` to tell the router-link where to go.  This includes the `EditTask component` and the `path`. The path is where we use the `:id` params from earlier and map the key to the `task.id`:
+ 
+![Screenshot from 2021-03-02 06-34-15](https://user-images.githubusercontent.com/73107656/109608143-52e7eb00-7b21-11eb-9b47-6ce4f42ea460.png)
+
+Now we have the EditTask view that is being shown when a user clicks the edit icon with a task.  Now we need to create the form template for the EditTask view. Here we will reuse the AddTask form template to start with.
+
+4. Alter the form so it pre-populates the existing values and then on submit save any changes to the data base and updates in the Home.View (tasks list)
+
+- Remove the existing submit handler and leave for now
+- Create data properties with initial empty strings so the `v-model` has two way data flow
+
+![Screenshot from 2021-03-02 06-49-48](https://user-images.githubusercontent.com/73107656/109609648-888dd380-7b23-11eb-88fb-efa8c965f948.png)
+
+![Screenshot from 2021-03-02 06-50-03](https://user-images.githubusercontent.com/73107656/109609658-8d528780-7b23-11eb-9712-333ffe577947.png)
+
+- Accept the route parameter as a prop within the component. To do this we need to add `props: true` to the route within index.js:
+
+![Screenshot from 2021-03-02 06-55-31](https://user-images.githubusercontent.com/73107656/109610172-4add7a80-7b24-11eb-82f0-f7390eb937fd.png)
+
+- Then accept the props within the EditTask component to gain access to the `id`:
+
+![Screenshot from 2021-03-02 06-56-52](https://user-images.githubusercontent.com/73107656/109610296-7a8c8280-7b24-11eb-803c-feb30b14711e.png)
+
+- Now we can make a fetch request to the data base using the id
+
+We will do this on the `mounted()` hook so the the data is retrieved as the EditTask view is displayed:
+
+This is a get request so there is no method required. We get the data, turn it into an object and save the values to the equivalent data properties.  Because the data properties have a `v-model` two way data binding the values are shown within the input fields and available to the user to be edited:
+
+![Screenshot from 2021-03-02 07-15-00](https://user-images.githubusercontent.com/73107656/109612023-056e7c80-7b27-11eb-866c-dba0b287f104.png)
+
+
 
 ## Navbar component
 
