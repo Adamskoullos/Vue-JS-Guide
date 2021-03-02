@@ -182,7 +182,7 @@ Now we can get back to the handleSubmit method and work on the logic. Make a POS
 
 ## PUT request - Edit task
 
-We will have a separate edit view component that opens when the task edit icon is clicked that pre-populates with the existing data values by using v-model:
+We will have a separate edit view component that opens when the task edit icon is clicked that pre-populates with the existing data values by using v-model two way data bind:
 
 1. Add new EditTask.vue to the views folder and add an `<h1>` for now
 
@@ -190,7 +190,7 @@ We will have a separate edit view component that opens when the task edit icon i
 
 ![Screenshot from 2021-03-02 06-27-35](https://user-images.githubusercontent.com/73107656/109607616-6777b380-7b20-11eb-9d8f-879f06e7dfad.png)
 
-3. SingTask.vue - Make the task edit icon a link to the edit view and pass in the route parameter for the task:
+3. SingleTask.vue - Make the task edit icon a link to the edit view and pass in the route parameter for the task:
 
     - Wrap the edit icon `<span>` tag with a `<router-link>` tag 
     - Add the `:to=""` to tell the router-link where to go.  This includes the `EditTask component` and the `path`. The path is where we use the `:id` params from earlier and map the key to the `task.id`:
@@ -199,7 +199,7 @@ We will have a separate edit view component that opens when the task edit icon i
 
 Now we have the EditTask view that is being shown when a user clicks the edit icon with a task.  Now we need to create the form template for the EditTask view. Here we will reuse the AddTask form template to start with.
 
-4. Alter the form so it pre-populates the existing values and then on submit save any changes to the data base and updates in the Home.View (tasks list)
+4. Alter the form so it pre-populates the existing values and then on submit save any changes to the data base and updates in the Home.view (tasks list)
 
 - Remove the existing submit handler and leave for now
 - Create data properties with initial empty strings so the `v-model` has two way data flow
