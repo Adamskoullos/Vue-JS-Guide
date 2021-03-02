@@ -266,3 +266,54 @@ The complete EditTask.vue component  below:
 ![Screenshot from 2021-03-02 08-25-56](https://user-images.githubusercontent.com/73107656/109619654-f260aa00-7b30-11eb-9a75-f6ca9dca7af9.png)
 
 
+## Filter navigation
+
+Add filter options to view tasks within the Home.vue view by either: Open, complete or all.  To do this we will create a new FilterNav component within the components folder and add the component template to the Home.vue view.
+
+1. Create FilterNav.vue file within components folder
+
+2. Add boiler plate and template. The template to include a `<nav>` with a `<button>` for each filter option.  Each button to have a click event that fires the same callback.  The callback has a different argument passed in depending on the filter option clicked.  The click event name and data are emitted up to the parent component (Home.vue)
+
+![Screenshot from 2021-03-02 11-16-48](https://user-images.githubusercontent.com/73107656/109640766-cbae6d80-7b48-11eb-8536-3b77a8a84e79.png)
+
+3. Drop the NavFilter component into the Home component:
+
+- Import NavFilter
+- Add NavFilter to the components object to accept it
+- Add the NavFilter tag to the template of Home.vue
+- Add an event listener to the component tag
+- Set the event listener to change the value of the property `current` to the value of the passed up data
+- Define the property `current: 'all'` within the data object with a default value of `all`. 
+
+**Note**: The keyword `$event` here is equal to the emitted data that has been passed up by the `$emit` event.
+
+So the user has clicked to filter, the event has been emitted up to the Home component and includes the data. Now we are tracking which ever filter option is clicked in the FilterNav component and storing the current value of `current` to that value which is stored in the Home component where we need it in order to alter what tasks are displayed.
+
+This is how the FilterNav and Home components look so far:
+
+![Screenshot from 2021-03-02 11-43-41](https://user-images.githubusercontent.com/73107656/109643983-d3701100-7b4c-11eb-984c-b4782bb0281e.png)
+
+![Screenshot from 2021-03-02 11-44-36](https://user-images.githubusercontent.com/73107656/109643991-d66b0180-7b4c-11eb-9501-90e18ded0cfd.png)
+
+4. Modify the FilterNav tabs to show the active filter
+
+- Send the value of the prop `current` back down to the child component (FilterNav) so we can modify the buttons to show the active tab. We can call this prop what ever we like.  I have called it current in the example below. Note that we ned to bind the prop to use it:
+
+![Screenshot from 2021-03-02 11-49-03](https://user-images.githubusercontent.com/73107656/109644368-4d07ff00-7b4d-11eb-839c-cb549bb49220.png)
+
+- Accept the prop within props inside the FilterNav component
+
+![Screenshot from 2021-03-02 11-57-43](https://user-images.githubusercontent.com/73107656/109645271-81c88600-7b4e-11eb-86b8-eaf48ce366a4.png)
+
+- Add conditional class to each filter tab to give the clicked filter the `active` class
+
+![Screenshot from 2021-03-02 12-03-29](https://user-images.githubusercontent.com/73107656/109645850-51351c00-7b4f-11eb-9f26-921bc88e7908.png)
+
+Above, we are data binding to the passed in prop `current` and setting the class `active` to the button/tab that matches the current value of `current`.
+
+
+
+
+
+
+
