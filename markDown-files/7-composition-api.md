@@ -6,7 +6,7 @@ ToC:
 [Template Refs and Set-up Function](#Template-Refs-and-Set-up-Function)<br>
 [Using Refs for Reactivity](#Using-Refs-for-Reactivity)<br>
 [Refs vs Reactive](#Refs-vs-Reactive)<br>
-[Computed Values in the Set-Up Function](#Computed-Values-in-the-Set-Up-Function)<br>
+[Computed Values in the Set-Up Function](#Computed-Values-in-the-Set-Up-Function) **Filtered search pattern**<br>
 [Using watch and watchEffect](#Using-watch-and-watchEffect)<br>
 [Props in Set-Up Function](#Props-in-Set-Up-Function)<br>
 [Lifecycle Hooks](#Lifecycle-Hooks)<br>
@@ -96,8 +96,17 @@ Below is the full pattern:
 ![Screenshot from 2021-03-03 14-37-51](https://user-images.githubusercontent.com/73107656/109821595-0b02ba00-7c2e-11eb-9787-6e6266240b72.png)
 
 
-
 # Using watch and watchEffect
+
+watch and watchEffect are used to track a change in data and then fire a function every time.  watch does not fire initially but watchEffect fires once on startup and then on each change thereafter changes.
+
+watch  takes a property as an argument in order to watch that property, watchEffect does not take an argument instead it will watch whatever property is used within the callback.
+
+Below is an example of the `watch` in action, when I added the `watch()` vue automatically added a new import:
+
+![Screenshot from 2021-03-03 16-06-51](https://user-images.githubusercontent.com/73107656/109834812-7d799700-7c3a-11eb-9b00-dad735266e4e.png)
+
+More on these as I begin to use then..
 
 # Props in Set-Up Function
 
