@@ -1,12 +1,13 @@
 # Basic structure and patterns to wire router system up 
 
 ToC:
+
 [How the router is wired up](#How-the-router-is-wired-up)<br>
 [Router Links](#Router-Links)<br>
 [Folder Structure](#Folder-Structure)<br>
 [Setting up Sub-Views and Route Parameters](#Setting-up-Sub-Views-and-Route-Parameters)<br>
 [404 Page and Redirects](#404-Page-and-Redirects)<br>
-[Forward/Backward navigation using browser history](#Forward/Backward-navigation-using-browser-history)<br>
+[Forward/Backward navigation using browser history](#Forward-Backward-navigation-using-browser-history)<br>
 [Lazy loading](#Lazy-loading)<br>
 
 # How the router is wired up
