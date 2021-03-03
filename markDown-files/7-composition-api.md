@@ -73,6 +73,27 @@ We can use refs and reactive in the same way but there are some nuances:
 
 # Computed Values in the Set-Up Function
 
+In the composition api we do not have a computed section, instead any computed function is written as a function expression but with the keyword computed instead of function and the computed property is returned as normal.
+
+Below we define a const `matchingCars` and assign it a computed property, which returns a filtered array from the `cars` array:
+
+![Screenshot from 2021-03-03 14-32-54](https://user-images.githubusercontent.com/73107656/109820924-5d8fa680-7c2d-11eb-816c-2ddf9ba05089.png)
+
+We also need to import `computed` from vue:
+
+![Screenshot from 2021-03-03 14-33-46](https://user-images.githubusercontent.com/73107656/109821049-7ac47500-7c2d-11eb-8c87-280ab6d6e4cf.png)
+
+Then we need to return the computed property from the `setup()` function to use it in the template:
+
+![Screenshot from 2021-03-03 14-35-49](https://user-images.githubusercontent.com/73107656/109821312-c24b0100-7c2d-11eb-9843-411c856965c7.png)
+
+And then finally swap the original `cars` for `matchingCars` in the `v-for`:
+
+![Screenshot from 2021-03-03 14-37-01](https://user-images.githubusercontent.com/73107656/109821477-ed355500-7c2d-11eb-8393-e8522846f3e2.png)
+
+Below is the full pattern:
+
+![Screenshot from 2021-03-03 14-37-51](https://user-images.githubusercontent.com/73107656/109821595-0b02ba00-7c2e-11eb-9787-6e6266240b72.png)
 
 
 
