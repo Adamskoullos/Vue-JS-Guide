@@ -7,7 +7,7 @@ ToC:
 [Folder Structure](#Folder-Structure)<br>
 [Setting up Sub-Views and Route Parameters](#Setting-up-Sub-Views-and-Route-Parameters)<br>
 [404 Page and Redirects](#404-Page-and-Redirects)<br>
-[Forward/Backward navigation using browser history](#Forward-Backward-navigation-using-browser-history)<br>
+[Forward-Backward navigation using browser history](#Forward-Backward-navigation-using-browser-history)<br>
 [Lazy loading](#Lazy-loading)<br>
 
 # How the router is wired up
@@ -102,7 +102,7 @@ Catchall routes:
 ![Screenshot from 2021-02-26 12-34-21](https://user-images.githubusercontent.com/73107656/109300834-fa69d280-782e-11eb-88d1-6bc54926d175.png)
 
 
-# Forward/Backward navigation using browser history
+# Forward-Backward navigation using browser history
 
 ![Screenshot from 2021-02-26 12-52-40](https://user-images.githubusercontent.com/73107656/109302678-87159000-7831-11eb-8edb-f5782d4fb442.png)
 
