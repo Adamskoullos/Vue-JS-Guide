@@ -56,10 +56,25 @@ So now if we change the value of a property with a value wrapped in a ref the va
 
 ![Screenshot from 2021-03-03 11-33-04](https://user-images.githubusercontent.com/73107656/109799709-3f697c80-7c14-11eb-95c0-ffdad37098f6.png)
 
+**Note** 
+
+When working with the options api inside the `data()` function we referred to properties as `this.name` and in the template we only needed to refer to `name`. 
+
+When working with the composition api we refer to property values inside the `setup()` function as `name.value`, we do not use the `this` keyword and inside the template we just use `name`.
 
 # Refs vs Reactive
+We can use refs and reactive in the same way but there are some nuances:
+
+1. If the property is an object with key value pairs, to target the properties: with **refs** we would `name.value.property` and with **reactive** we would just `name.property`
+
+2. Primitive `Reactive('primitive value string')` values are not reactive! Only objects with key value pairs are.  However with `ref()` primitive values are reactive
+
+3. `Refs` also retain their reactivity when used with external composition functions.  `Reactive` does not.
 
 # Computed Values in the Set-Up Function
+
+
+
 
 # Using watch and watchEffect
 
