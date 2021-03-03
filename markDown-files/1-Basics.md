@@ -10,6 +10,7 @@ ToC:
 [Attribute binding (dynamic binding)](#Attribute-binding-(dynamic-binding))<br>
 [Dynamic classes](#Dynamic-classes)<br>
 [Computed Properties](#Computed-Properties)<br>
+[Lifecycle Hooks](#Lifecycle-Hooks)<br>
 
 # Event listener
 - **v-on:**
@@ -62,3 +63,12 @@ Computed properties are used for dynamic data where the data within an array cha
 ![Screenshot from 2021-03-02 16-05-18](https://user-images.githubusercontent.com/73107656/109764678-c35b3e80-7beb-11eb-8699-607771076185.png)
 
 ![Screenshot from 2021-03-02 16-05-37](https://user-images.githubusercontent.com/73107656/109765360-a5420e00-7bec-11eb-804c-014cf9823e36.png)
+
+
+# Lifecycle Hooks
+Lifecycle hooks are built in Vue functions that fire at different stages of a components lifecycle.  These functions are used as hooks to run code.  
+For example we can capture the point at which a component mounts an element, when there is an update to a property or when a component is unmounted, when a user navigates away from a page/view that uses a component and the components lifecycle finishes. 
+
+Below is an image from the Vue docs, displaying each event hook:  
+
+![Screenshot from 2021-02-24 15-55-49](https://user-images.githubusercontent.com/73107656/109027522-ca002800-76b8-11eb-8580-7bf5cd8cf4d9.png)
