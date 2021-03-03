@@ -40,6 +40,22 @@ We then need to add a `ref` attribute to the element tag within the template tha
 ![Screenshot from 2021-03-03 11-01-12](https://user-images.githubusercontent.com/73107656/109796222-c9631680-7c0f-11eb-8957-db47abd9b250.png)
 
 # Using Refs for Reactivity
+Data within the `setup()` function is by default not reactive, as it is when using the options api.  However we can make data reactive by using refs, because **refs are reactive values**:
+
+The first image below is using data without refs, thus the data is not reactive:
+
+![Screenshot from 2021-03-03 11-17-24](https://user-images.githubusercontent.com/73107656/109797944-0c25ee00-7c12-11eb-83bf-afadfbd389a0.png)
+
+Once we wrap the values in refs the data becomes reactive and when using the data in the template, when it changes, the data values in the template are also updated:
+
+![Screenshot from 2021-03-03 11-29-32](https://user-images.githubusercontent.com/73107656/109799261-bc482680-7c13-11eb-99c7-402d7c457743.png)
+
+So now if we change the value of a property with a value wrapped in a ref the value within the template automatically updates to:
+
+![Screenshot from 2021-03-03 11-32-50](https://user-images.githubusercontent.com/73107656/109799705-3d9fb900-7c14-11eb-92cf-def200640c6e.png)
+
+![Screenshot from 2021-03-03 11-33-04](https://user-images.githubusercontent.com/73107656/109799709-3f697c80-7c14-11eb-95c0-ffdad37098f6.png)
+
 
 # Refs vs Reactive
 
