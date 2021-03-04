@@ -88,6 +88,34 @@ Now lets  import the function and use it within the `setup()` within the `Home` 
 
 # Creating a Composable
 
+Create a view that shows the full body of a single post `SinglePost`.  We will need to set up the route, and fetch the single post. We will create a new composable function to fetch the single post. 
+
+1. Create `SinglePost.vue` add the boiler plate
+
+2. index.js - set up the route for the `SinglePost` view
+
+![Screenshot from 2021-03-04 16-50-47](https://user-images.githubusercontent.com/73107656/109999097-c77d7e00-7d09-11eb-917d-210156736da2.png)
+
+3. Now link to the `SinglePost` view from the `BlogPost` template which is nested within the `PostList` template which is displayed within the `Home` view.
+
+We do this by wrapping the `title` element for each post with a `<router-link>` so they become links.  We add `:to` and `params`:
+
+![Screenshot from 2021-03-04 17-08-09](https://user-images.githubusercontent.com/73107656/110001351-34921300-7d0c-11eb-90f7-2ceff586a9db.png)
+
+4. Now accept the `id` props within the `SinglePost` view and pass `props` into the `setup()` function so we can access `id`:
+
+![Screenshot from 2021-03-04 17-12-33](https://user-images.githubusercontent.com/73107656/110001978-d31e7400-7d0c-11eb-9845-29fcb4c010c9.png)
+
+
+5. Now we can work on the fetch request. 
+
+
+
+
+
+
+
+
 # Creating a Loading spinner
 
 # Making a web form
