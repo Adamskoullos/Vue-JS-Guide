@@ -106,8 +106,79 @@ Below is an example of the `watch` in action, when I added the `watch()` vue aut
 
 ![Screenshot from 2021-03-03 16-06-51](https://user-images.githubusercontent.com/73107656/109834812-7d799700-7c3a-11eb-9b00-dad735266e4e.png)
 
-More on these as I begin to use then..
 
 # Props in Set-Up Function
+
+How to use props within the `setup()` function in the composition api:
+
+For the example below we are using a data source from the `Home` view which is also where the blog posts will be ultimately displayed.  However the `PostList` component is a separate file so we need to import the `PostList` component and then pass down the blog post data.  Then we will have another separate `BlogPost` component that is a template for displaying single posts.  We will import this into the `PostList` component and again pass the `posts` data down into this component.  To recap, the source of the `posts` array is in the main blog page `Home`, we are passing the data down once to `PostList` and then again down to `BlogPost`.  Then `BlogPost` is nested in the `PostList` component, which is nested in `Home` component.  
+
+1. Create `PostList` component within the components folder
+
+2. Import `PostList` into the `Home` view
+
+![Screenshot from 2021-03-04 06-42-02](https://user-images.githubusercontent.com/73107656/109922077-beae8d00-7cb4-11eb-9a71-99953b87db50.png)
+
+3. Pass the data prop down to the `PostList` component from the `Home` component
+
+First the `posts` data property is returned from the `setup()` function (above) so we have access to it, then we pass it down to the `PostList` component:
+
+![Screenshot from 2021-03-04 06-46-54](https://user-images.githubusercontent.com/73107656/109922550-6c21a080-7cb5-11eb-92b2-24c61a12107c.png)
+
+4. Accept the data property within the `PostList` component:
+
+![Screenshot from 2021-03-04 06-54-03](https://user-images.githubusercontent.com/73107656/109923264-6a0c1180-7cb6-11eb-83ca-9b7742dcbbea.png)
+
+Now we have access to the data and can work with it in the template within the `PostList` component.
+
+
+5. Create the template in `PostList`using the data:
+
+![Screenshot from 2021-03-04 07-20-03](https://user-images.githubusercontent.com/73107656/109925768-0daaf100-7cba-11eb-8f58-c5c461e6ccab.png)
+
+
+6. Pass the `props` array into the `setup()` function so we can work on any data within the props array. For example filter the `posts` data using a computed property.
+
+**Note**
+
+`Props` is an array of data that has been passed down to a component, however when we pass the `props` array into the `setup()` function it is wrapped in an object.  This means that we use **dot notation** to access each individual prop. `props.posts`
+
+![Screenshot from 2021-03-04 07-33-13](https://user-images.githubusercontent.com/73107656/109927297-e3f2c980-7cbb-11eb-9a21-1d61a27fadcb.png)
+
+7. Now add the single post component `BlogPost` to the components folder.
+
+8. Import `BlogPost` into `PostList`
+
+9. Pass the individual `post` prop down to `BlogPost`
+
+**Note**
+
+Here we are looping through each post so we have access to individual posts and this is what we are passing down.  Each individual post, not the posts array.
+
+This is the pattern so far for the `PostList` component:
+
+![Screenshot from 2021-03-04 08-03-27](https://user-images.githubusercontent.com/73107656/109930932-1c94a200-7cc0-11eb-8d6d-78deb136bc99.png)
+
+
+10. Accept the prop within `BlogPost`
+
+11. Create the template for individual posts using the `post` data 
+
+![Screenshot from 2021-03-04 08-05-51](https://user-images.githubusercontent.com/73107656/109931201-74330d80-7cc0-11eb-8ec0-31241482fa96.png)
+
+Ok so now we are all wired up with the props data being passed down multiple levels and each template component being successfully imported up, so our data flows as required.
+
+12. Displaying a `snippet` of the body for each post within the `BlogPost` template:
+
+- Pass the `props` into the `setup()` function so we have access to `props.post`
+- Create a computed property that returns a `substring` of the body string for each post.  Make sure to also import `computed` from vue
+- return the computed property `snippet` from the `setup()` function
+- Exchange `post.body` for `snippet` in the template
+
+![Screenshot from 2021-03-04 08-31-22](https://user-images.githubusercontent.com/73107656/109934090-038df000-7cc4-11eb-90f1-36150ad92d93.png)
+
+How the `Home` view looks so far:
+
+![Screenshot from 2021-03-04 08-31-58](https://user-images.githubusercontent.com/73107656/109934151-1accdd80-7cc4-11eb-8e2b-4e7af95443dd.png)
 
 # Lifecycle Hooks
