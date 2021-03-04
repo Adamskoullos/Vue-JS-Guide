@@ -187,4 +187,4 @@ Lifecycle hooks can be used outside of the `setup()` function in the same way th
 
 ![Screenshot from 2021-03-04 10-50-48](https://user-images.githubusercontent.com/73107656/109953082-7e143b00-7cd7-11eb-8553-8425f7a3ba7d.png)
 
-If we use the `v-if` directive to toggle an element/component, the component is unmounted when not shown and mounted whe it is shown. 
+If we use the `v-if` directive to toggle an element/component, the component is unmounted when not shown and mounted when it is shown. 
