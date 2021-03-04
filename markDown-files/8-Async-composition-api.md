@@ -8,9 +8,11 @@
 ----------------------------------------------------------------------
 
 # Fetching data in the setup function
-The below GET request pattern includes:
+The below pattern includes:
 
-- Async fetch()
+- Async function
+- fetch request
+- try/catch blocks
 - Error handling
 - Loading time handling
 
