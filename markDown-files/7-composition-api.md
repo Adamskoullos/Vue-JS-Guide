@@ -182,3 +182,9 @@ How the `Home` view looks so far:
 ![Screenshot from 2021-03-04 08-31-58](https://user-images.githubusercontent.com/73107656/109934151-1accdd80-7cc4-11eb-8e2b-4e7af95443dd.png)
 
 # Lifecycle Hooks
+
+Lifecycle hooks can be used outside of the `setup()` function in the same way they are used in the options api.  We can also use lifecycle hooks inside the `setup()` function but we need to prefix **on**, for example, `mounted()` would be `onMounted()` inside the `setup()` function and as we click on the `onMounted` when we are defining it, vue automatically imports it for us:
+
+![Screenshot from 2021-03-04 10-50-48](https://user-images.githubusercontent.com/73107656/109953082-7e143b00-7cd7-11eb-8553-8425f7a3ba7d.png)
+
+If we use the `v-if` directive to toggle an element/component, the component is unmounted when not shown and mounted whe it is shown. 
