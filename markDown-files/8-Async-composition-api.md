@@ -48,6 +48,44 @@ Now just focusing on the template:
 
 # Composables - Composition functions
 
+Functions that are used and reused multiple times in different parts of a project can be externalised in their own file within a `composablse` folder. We can import the function file to use/invoke within a components `setup()` function.  
+
+**Note**: The composable is defined within its own JS file, not a vue file.
+
+Below we are going to transfer the logic from the above pattern to it's own file:
+
+1. Create `composables` folder within `src`
+
+2. Create `getPosts.js` file
+
+3. Within the file, create the function expression `getPosts()` and we already have the logic from above.
+
+However we need to make a few changes:
+
+- We do not want to invoke the `load()` function as we will do that in the component that imports it
+- We also need to return any data or functions that we want to have access to so we will add `load` as well
+- We need to (at the top of the file) import `ref` 
+- And lastly we need to export the function
+
+**Note**: This is a really nice pattern that takes advantage of closure and really helps tidy up a components `setup()` function
+
+This is the composable pattern:
+
+![Screenshot from 2021-03-04 15-02-03](https://user-images.githubusercontent.com/73107656/109983300-99447200-7cfa-11eb-96d2-79e2f11627e3.png)
+ 
+Now lets  import the function and use it within the `setup()` within the `Home` component.
+
+1. Import the function 
+
+2. Invoke the `getPosts()` function. Looking at the example above this function returns an object with three items `{ posts, error, load }` so we need to save the return value in order to have access. The pattern used below to do this is destructuring. Doing this allows us to directly use any of the returned values. Now the `load()` function definition is able to be invoked.
+
+3. Once defined, we can invoke the `load()` function which gets the data and assigns it to the `posts` array
+
+4. Then as normal the `setup()` returns any properties we want to have access to in the template, so `posts` and `error` are returned
+
+![Screenshot from 2021-03-04 15-19-57](https://user-images.githubusercontent.com/73107656/109985855-1b359a80-7cfd-11eb-85ca-21680ceee80e.png)
+
+
 # Creating a Composable
 
 # Creating a Loading spinner
