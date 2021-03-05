@@ -92,13 +92,13 @@ Create a view that shows the full body of a single post `SinglePost`.  We will n
 
 1. Create `SinglePost.vue` add the boiler plate
 
-2. index.js - set up the route for the `SinglePost` view
+2. index.js - set up the route for the `SinglePost` view.  We include the `props: true` so that we can access the route parameter as a prop within the `SinglePost` component. 
 
 ![Screenshot from 2021-03-04 16-50-47](https://user-images.githubusercontent.com/73107656/109999097-c77d7e00-7d09-11eb-917d-210156736da2.png)
 
 3. Now link to the `SinglePost` view from the `BlogPost` template which is nested within the `PostList` template which is displayed within the `Home` view.
 
-We do this by wrapping the `title` element for each post with a `<router-link>` so they become links.  We add `:to` and `params`:
+We do this by wrapping the `title` element for each post with a `<router-link>` so they become links.  We add `:to` which includes the route `name` and maps the `params` key:
 
 ![Screenshot from 2021-03-04 17-08-09](https://user-images.githubusercontent.com/73107656/110001351-34921300-7d0c-11eb-90f7-2ceff586a9db.png)
 
@@ -107,13 +107,35 @@ We do this by wrapping the `title` element for each post with a `<router-link>` 
 ![Screenshot from 2021-03-04 17-12-33](https://user-images.githubusercontent.com/73107656/110001978-d31e7400-7d0c-11eb-9845-29fcb4c010c9.png)
 
 
-5. Now we can work on the fetch request. 
+Now we have access to the `id` to be viewed, we need to create the composable that will fetch the single post and pull the function into the `setup()` function of our new `SinglePost` view.
 
+5. Create the fetch single post composable `getPost`. We can reuse the same pattern as the fetch all posts composable so we will start with this and alter:
 
+- The `posts` array is changed to `post` and turned from an empty array (as it's just a single post) to have an initial value of `null`
+- We have access to the `id` within the `singlePost` component so we will pass it as an argument into the `getPost` function and add it on to the end of the end point to target the single post
+- Then we just alter all ` posts` to just `post`
 
+![Screenshot from 2021-03-05 06-57-31](https://user-images.githubusercontent.com/73107656/110078722-1108b000-7d80-11eb-8531-00e55af5614f.png)
 
+Now its time to import the composable `getPost` into the `setup()` function within `SinglePost` and set up the template
 
+6. Import `getPost`
 
+7. Use destructuring and invoke `getPost` to return `post, error, load`
+
+**Note**: `getPost` takes an argument  which gets added as the post id within the endpoint, so we need to pass in the `props.id` which we have access to
+
+8. Invoke `load()` which makes the fetch request and adds the post value to `post`
+
+9. return `post, error` from the `setup()` function so we can use within the template
+
+10. Use dot.notation to access and display each part of the post:
+
+- The first div `v-if` shows if there is an error and displays the error
+- the next div `v-if` displays the post content if there is a post
+- The `else` div shows while the post content is loading (we will work with this next)
+
+![Screenshot from 2021-03-05 07-32-56](https://user-images.githubusercontent.com/73107656/110082256-03a1f480-7d85-11eb-9858-731f774282d1.png)
 
 
 # Creating a Loading spinner
