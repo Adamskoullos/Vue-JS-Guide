@@ -32,4 +32,38 @@ Below is an example where we alter this and use the `route.params.id` instead.  
 ![Screenshot from 2021-03-05 16-27-52](https://user-images.githubusercontent.com/73107656/110143990-c020a800-7dcf-11eb-9117-b43625febc3a.png)
 
 
+# Create a Tag view that filters and displays only posts with the clicked tag 
 
+**Tasks:**
+
+1. Create `Tag.vue`
+
+2. Create the route in index.js using `/tags/:tag`
+
+3. fetch request to grab all posts
+
+4. Build a computed property to filter just posts with the tag
+
+5. Use the  `useRoute` to access the tag route parameter
+
+6. Use the `PostList` component to output the required posts
+
+7. Show `spinner` while data is loading and `error` if there is an error
+
+
+
+First this is the index.js route for `Tag.vue`:
+
+![Screenshot from 2021-03-05 18-03-47](https://user-images.githubusercontent.com/73107656/110155167-252eca80-7ddd-11eb-940d-1b964874d544.png)
+
+Then this is the `router-link` pattern turning the `#tags` into individual links, to a route path ending with each specific tag:
+
+![Screenshot from 2021-03-05 18-04-34](https://user-images.githubusercontent.com/73107656/110155244-41cb0280-7ddd-11eb-91f0-95b0450649b7.png)
+
+Now each tag is routed to its own path.
+
+Next Lets deal with the `Tag.vue` component:
+
+**Break down to go here**
+
+![Screenshot from 2021-03-05 19-49-21](https://user-images.githubusercontent.com/73107656/110166187-e5bbaa80-7deb-11eb-9ceb-9922df554cc3.png)
