@@ -203,11 +203,21 @@ We can now add new tags, the form and the view are set up, before we add the sub
 
 ### Submit Function
 
+- Add submit event handler to form
+- Make a POST fetch request using async/await to db.json
+
+1. Add submit event listener to `form` to fire `addPost`
+
+2. Create function expression for `addPost`:
+
 6. Return all data properties and functions used within the template
 
-
-
-
- 
-
 # POST request
+
+We can now add posts and update the db, however we are not yet routing the user back to the `Home` view and we also do not have a navbar, these will be addressed in section 9. Here is the pattern for the `POST` fetch request using async/await:
+
+![Screenshot from 2021-03-05 13-53-57](https://user-images.githubusercontent.com/73107656/110124642-3f0ae600-7dba-11eb-9430-35f810292cbf.png)
+
+And below is the full pattern for the `NewPost` view component:
+
+![Screenshot from 2021-03-05 13-59-03](https://user-images.githubusercontent.com/73107656/110125550-54344480-7dbb-11eb-8baf-ea6ac6cf771d.png)
