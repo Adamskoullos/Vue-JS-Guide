@@ -154,6 +154,60 @@ Create a spinner to display while the data is being fetched:
 
 ![Screenshot from 2021-03-05 08-18-46](https://user-images.githubusercontent.com/73107656/110087335-6b5b3e00-7d8b-11eb-83da-1b1adfb266d7.png)
 
-# Making a web form
+# NewPost View
+
+Create a `NewPost` view component for users to create a new post and add it to the blog.
+The template to include a web form using v-model for user input to populate data properties which can then on submit be added as a new post.
+
+1. Create `NewPost` view in the views folder
+
+2. index.js - Create a route for the view within the router, importing the component
+
+![Screenshot from 2021-03-05 10-47-57](https://user-images.githubusercontent.com/73107656/110105407-41f8dd00-7da0-11eb-9d57-49969e484b37.png)
+
+3. `NewPost` component - Create the template: 
+
+- Wrap the form in a div with a styling class
+- Add form tags
+- Add labels and inputs for the following:
+    - Title (title)
+    - Content (body)
+    - Tags (tag)
+- Add a `v-for` div to display tags as they are added
+- Add submit button at the bottom of the form
+
+All input tags to have `v-model` for two way data binding and tags to be added with the enter key.
+
+4. Add  the `setup()` function and then add the data properties:
+
+- `title`, `body` and `tag` to be an empty string (use `ref()`)
+- `tags` to be an empty array, which collects each tag when enter is pressed
+
+5. Add the `tags` and `submit` functions to the `setup()` function
+
+### Tags Function
+
+- Add `keydown` event listener to `tag` input: `@keydown.enter.prevent="addTag"`
+- Create `addTag()` function:
+    - If  tags does not already include tag
+    - remove whitespace
+    - Add tag value to tags array
+    - reset tag value back an empty string
+
+- Add `addTag` to the returned object 
+ 
+We can now add new tags, the form and the view are set up, before we add the submit functionality here is the code so far:
+
+![Screenshot from 2021-03-05 11-51-04](https://user-images.githubusercontent.com/73107656/110112001-13333480-7da9-11eb-9887-3689450d2a3c.png)
+
+
+### Submit Function
+
+6. Return all data properties and functions used within the template
+
+
+
+
+ 
 
 # POST request
