@@ -115,7 +115,7 @@ Now we have access to the `id` to be viewed, we need to create the composable th
 - We have access to the `id` within the `singlePost` component so we will pass it as an argument into the `getPost` function and add it on to the end of the end point to target the single post
 - Then we just alter all ` posts` to just `post`
 
-![Screenshot from 2021-03-05 06-57-31](https://user-images.githubusercontent.com/73107656/110078722-1108b000-7d80-11eb-8531-00e55af5614f.png)
+![Screenshot from 2021-03-05 08-02-18](https://user-images.githubusercontent.com/73107656/110085522-1d453b00-7d89-11eb-9b9c-f199850875b0.png)
 
 Now its time to import the composable `getPost` into the `setup()` function within `SinglePost` and set up the template
 
@@ -139,6 +139,8 @@ Now its time to import the composable `getPost` into the `setup()` function with
 
 
 # Creating a Loading spinner
+
+
 
 # Making a web form
 
