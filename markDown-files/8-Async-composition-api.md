@@ -140,7 +140,19 @@ Now its time to import the composable `getPost` into the `setup()` function with
 
 # Creating a Loading spinner
 
+Create a spinner to display while the data is being fetched:
 
+1. Create `Spinner` component within the components folder
+
+![Screenshot from 2021-03-05 08-17-44](https://user-images.githubusercontent.com/73107656/110087218-48308e80-7d8b-11eb-9a90-b0f578930177.png)
+
+2. Import the `Spinner` component into the `Home` and `SinglePost` views:
+
+- Import
+- Add to components object
+- Add `Spinner` tag within the  loading div
+
+![Screenshot from 2021-03-05 08-18-46](https://user-images.githubusercontent.com/73107656/110087335-6b5b3e00-7d8b-11eb-83da-1b1adfb266d7.png)
 
 # Making a web form
 
