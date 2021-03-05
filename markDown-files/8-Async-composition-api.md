@@ -4,6 +4,7 @@
 [Creating a Loading spinner](#Creating-a-Loading-spinner)<br>
 [NewPost View](#NewPost-View)<br>
 [POST request](#POST-request)<br>
+[Navbar](#Navbar)<br>
 
 ----------------------------------------------------------------------
 
@@ -214,10 +215,23 @@ We can now add new tags, the form and the view are set up, before we add the sub
 
 # POST request
 
-We can now add posts and update the db, however we are not yet routing the user back to the `Home` view and we also do not have a navbar, these will be addressed in section 9. Here is the pattern for the `POST` fetch request using async/await:
+We can now add posts and update the db, however we are not yet routing the user back to the `Home` view and we also do not have a navbar. Here is the pattern for the `POST` fetch request using async/await:
 
 ![Screenshot from 2021-03-05 13-53-57](https://user-images.githubusercontent.com/73107656/110124642-3f0ae600-7dba-11eb-9430-35f810292cbf.png)
 
 And below is the full pattern for the `NewPost` view component:
 
 ![Screenshot from 2021-03-05 13-59-03](https://user-images.githubusercontent.com/73107656/110125550-54344480-7dbb-11eb-8baf-ea6ac6cf771d.png)
+
+
+# Navbar
+
+1. Add `Navbar` component to the components folder
+
+2. Create the template including tabs for `Home` and `NewPost`:
+
+![Screenshot from 2021-03-05 14-51-38](https://user-images.githubusercontent.com/73107656/110131677-4f26c380-7dc2-11eb-8621-450e3be7def8.png)
+
+3. Nest the component within the `App` component:
+
+![Screenshot from 2021-03-05 14-57-37](https://user-images.githubusercontent.com/73107656/110132485-22bf7700-7dc3-11eb-8ac1-0f032cc3cffc.png)
