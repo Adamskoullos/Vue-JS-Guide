@@ -46,10 +46,9 @@ Below is an example where we alter this and use the `route.params.id` instead.  
 
 5. Use the  `useRoute` to access the tag route parameter
 
-6. Use the `PostList` component to output the required posts
+6. Use the `PostList` component to output the required posts (passing down the computed property `filteredPosts`)
 
 7. Show `spinner` while data is loading and `error` if there is an error
-
 
 
 First this is the index.js route for `Tag.vue`:
@@ -60,10 +59,30 @@ Then this is the `router-link` pattern turning the `#tags` into individual links
 
 ![Screenshot from 2021-03-05 18-04-34](https://user-images.githubusercontent.com/73107656/110155244-41cb0280-7ddd-11eb-91f0-95b0450649b7.png)
 
+**Note**: Above - The `v-for` is placed within the `router-link` instead of the `span` tag, this is so each tag becomes an individual link. 
+
 Now each tag is routed to its own path.
 
 Next Lets deal with the `Tag.vue` component:
 
-**Break down to go here**
+Starting at the top, the template uses the same pattern as the `Home` blog page with some minor changes. We are showing the `error` if there is one, we are reusing the `Spinner` while loading and we are reusing the `PostList` component which uses the `BlogPost` component template for each post to be displayed.
 
+The difference is that we are changing the props that are being passed down into `PostList`, We are passing down the computed property `filteredPosts`.  This is how we can reuse the component.
+
+Moving on down from there we are importing the `getPosts` composable to use in the `setup()` function, the `Spinner` and `PostList` components that we use in the template.  We also import `{ useRoute }` to access route parameter properties and `{ computed }`, both from Vue.
+
+Moving down to the script tags, we need to register the components we have imported, `PostList` and `Spinner`. Now we can use them within the template.
+
+Inside the `setup()` function we invoke the `useRoute()` function and save the returned object to a const.
+
+We then invoke `getPosts()` and destruct data and functions.
+
+Then we invoke the `load()` function grabbing the data
+
+We then create the `filteredPosts` computed property and return posts that have the chosen tag. 
+
+**Note**: We use the `useRoute` to access the route parameter here and use this value within the `filter()` function.  So when a tag is clicked and the user is routed to a view with the tag being added to the end of the route, the `filteredPosts` only adds posts with that tag to the array to be displayed.  We can do this as we gave each tag the route params of `:tag` in index.js, and then mapped the tag to `:tag` within the `router-link` `params:{ id: tag }` for each tag within the `BlogPost` component.  
+
+And finally we return any data and functions we want to use within the template:
+ 
 ![Screenshot from 2021-03-05 19-49-21](https://user-images.githubusercontent.com/73107656/110166187-e5bbaa80-7deb-11eb-9ceb-9922df554cc3.png)
