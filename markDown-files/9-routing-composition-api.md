@@ -81,7 +81,7 @@ Then we invoke the `load()` function grabbing the data
 
 We then create the `filteredPosts` computed property and return posts that have the chosen tag. 
 
-**Note**: We use the `useRoute` to access the route parameter here and use this value within the `filter()` function.  So when a tag is clicked and the user is routed to a view with the tag being added to the end of the route, the `filteredPosts` only adds posts with that tag to the array to be displayed.  We can do this as we gave each tag the route params of `:tag` in index.js, and then mapped the tag to `:tag` within the `router-link` `params:{ id: tag }` for each tag within the `BlogPost` component.  
+**Note**: We use the `useRoute` to access the route parameter here and use this value within the `filter()` function.  So when a tag is clicked and the user is routed to a view with the tag being added to the end of the route, the `filteredPosts` only adds posts with that tag to the array to be displayed.  We can do this as we gave each tag the route params of `:tag` in index.js, and then mapped the tag to `:tag` within the `router-link` `params:{ tag: tag }` for each tag within the `BlogPost` component.  
 
 And finally we return any data and functions we want to use within the template:
  
