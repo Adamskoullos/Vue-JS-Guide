@@ -151,3 +151,18 @@ Lets build the `useTags.js` composable:
 - Add to template, below `PostList`
 - Pass props down `:posts="posts"` into the `TagPanel` component 
 
+Below pattern works for both `Home` and `Tag` views, this shows how the `TagPanel` component is used side by side with the `PostList` component:
+
+![Screenshot from 2021-03-06 10-10-35](https://user-images.githubusercontent.com/73107656/110203124-3838ad80-7e64-11eb-96f4-f3a415c87044.png)
+
+Next this is the index.js router:
+
+![Screenshot from 2021-03-06 10-11-19](https://user-images.githubusercontent.com/73107656/110203146-4edf0480-7e64-11eb-95f1-e6a9a2072af0.png)
+
+Then this is the `TagPanel` component:
+
+![Screenshot from 2021-03-06 10-13-18](https://user-images.githubusercontent.com/73107656/110203195-96659080-7e64-11eb-9b29-52fd80dcf9e2.png)
+
+And finally the `useTags` composable:
+
+![Screenshot from 2021-03-06 10-14-00](https://user-images.githubusercontent.com/73107656/110203209-ae3d1480-7e64-11eb-94d6-9f29d7d705f3.png)
