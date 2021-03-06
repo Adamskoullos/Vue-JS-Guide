@@ -86,3 +86,68 @@ We then create the `filteredPosts` computed property and return posts that have 
 And finally we return any data and functions we want to use within the template:
  
 ![Screenshot from 2021-03-05 19-49-21](https://user-images.githubusercontent.com/73107656/110166187-e5bbaa80-7deb-11eb-9ceb-9922df554cc3.png)
+
+
+# Add a right hand side column showing all tags for easy navigation to view posts for specific tags
+
+To do this we will add a component that will display the tags `TagPanel` on the right side column (1/4 page width) on the `Home` view, with the `PostList` component taking up (3/4 page width) from the left.  The `TagPanel` will also be shown on each `Tag.vue` page which is shown when the user clicks on a tag to filter posts.
+
+To handle the logic the `TagPanel` will import a `useTags.js` composable.
+
+The result will be that from either the `Home` or `Tag` views the user can navigate to filtered posts using the `TagPanel`.
+
+1. Create `TagPanel` component (We will come back to develop this component)
+
+2. `Home.vue` - Import `TagPanel` component, register within components and add it to the template. Next we pass the props `:posts="posts"` down so now the component has access to the `posts` array.
+
+3. Accept `props: ['posts']` within `TagPanel`. Now we can use the array of posts to create an array of tags. We only want one of each tag within the array though. 
+
+We will create a composable function to manage this logic.  Now we have the `posts` we can pass this in to our composable as a staring point.
+
+4. Let create the composable `useTags.js` within the composables folder.
+
+Tasks:
+
+- Pass the posts into the function
+- Create a new array of tags with only one of each tag. To do this we will cycle through and add each tag to a new set, which automatically excludes copies. We then spread the set into our new tags array, turning it back into an array. 
+- Return the array to be used within the `TagPanel` component 
+
+Lets build the `useTags.js` composable:
+
+- Import  `{ ref }` from vue as we are using `posts` and `tags` which are `ref` values.
+- Then create the `useTags` function expression with a const:
+
+    1. Add the input parameter `posts` so we can access the argument when we use the function
+
+    2. Create `const tags = ref([])` which will eventually be our tags array to be returned
+
+    3. Create `const tagSet = new Set()` this is temporally while we extract the tags and is not being used outside the `setup()` function with the component so it does not need to be reactive.
+
+    4. Write a `forEach` that cycles through the array of post objects and for each object cycles through the `tags` array.  Each tag is then added to the `tagSet`
+
+    5. Spread the `tagSet` into the `tags` array
+
+    6. Return `tags`
+
+    7. Export the function `useTags`
+
+5. Back in the `TagPanel` component import the `useTags` composable
+
+6. We already have `props: ['posts']` so we can pass `props` into the `setup(props)` function.  Now we can pass `props.posts` into the `useTags` composable.
+
+7. Destruct `useTags` passing in `props.posts`
+
+8. Return `{ tags }` from the `setup()` function so we can work with it in the template
+
+9. Now create the template, that cycles through and displays each tag as a link to its own `Tag.vue`:
+
+
+10. Style - add style to the `TagPanel` component and also `Home` and `Tag` views for layout 
+
+11. Add the `TagPanel` component to both the `Home` and `Tag` views and add grid styling to organise so they show within w right hand side column sharing the width with the `PostList` component:
+
+- Import
+- Add/register within components
+- Add to template, below `PostList`
+- Pass props down `:posts="posts"` into the `TagPanel` component 
+
