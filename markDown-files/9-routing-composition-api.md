@@ -63,7 +63,7 @@ Then this is the `router-link` pattern turning the `#tags` into individual links
 
 Now each tag is routed to its own path.
 
-Next Lets deal with the `Tag.vue` component:
+Next Lets deal with the `Tag.vue` component, image below:
 
 Starting at the top, the template uses the same pattern as the `Home` blog page with some minor changes. We are showing the `error` if there is one, we are reusing the `Spinner` while loading and we are reusing the `PostList` component which uses the `BlogPost` component template for each post to be displayed.
 
