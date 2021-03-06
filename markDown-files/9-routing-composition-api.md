@@ -1,8 +1,8 @@
-[Router-Composition-API](#Router-Composition-API)<br>
-[]()<br>
-[]()<br>
-[]()<br>
-[]()<br>
+
+[useRouter](#useRouter)<br>
+[useRoute](#useRoute)<br>
+[Tag View](#Tag-View)<br>
+[Tag Panel](#Tag-Panel)<br>
 
 
 # Router-Composition-API
@@ -32,7 +32,9 @@ Below is an example where we alter this and use the `route.params.id` instead.  
 ![Screenshot from 2021-03-05 16-27-52](https://user-images.githubusercontent.com/73107656/110143990-c020a800-7dcf-11eb-9117-b43625febc3a.png)
 
 
-# Create a Tag view that filters and displays only posts with the clicked tag 
+# Tag View
+
+## Create a Tag view that filters and displays only posts with the clicked tag 
 
 **Tasks:**
 
@@ -88,7 +90,9 @@ And finally we return any data and functions we want to use within the template:
 ![Screenshot from 2021-03-05 19-49-21](https://user-images.githubusercontent.com/73107656/110166187-e5bbaa80-7deb-11eb-9ceb-9922df554cc3.png)
 
 
-# Add a right hand side column showing all tags for easy navigation to view posts for specific tags
+# Tag Panel
+
+## Add a right hand side column showing all tags for easy navigation to view posts for specific tags
 
 To do this we will add a component that will display the tags `TagPanel` on the right side column (1/4 page width) on the `Home` view, with the `PostList` component taking up (3/4 page width) from the left.  The `TagPanel` will also be shown on each `Tag.vue` page which is shown when the user clicks on a tag to filter posts.
 
