@@ -99,4 +99,20 @@ Here is a few built in firebase error messages:
 ![Screenshot from 2021-03-09 10-52-07](https://user-images.githubusercontent.com/73107656/110460110-afb94780-80c5-11eb-843e-330f394a19f3.png)
 
 
+# Login Composable
+
+1. Create `useLogin.js` composable and set up the structure. Import `ref` and `fAuth`, create a const `error`, a `login()` function for the logic and a `useLogin()` function that will return `login()` and `error`. Then lastly export the `useLogin()` function:
+
+![Screenshot from 2021-03-09 14-02-02](https://user-images.githubusercontent.com/73107656/110481960-0a5f9d00-80e0-11eb-8966-efb369dea7cc.png)
+
+**Note**: As the file/module loads `error` is defined and set to `null`, as the `login()` function is triggered, `error` is set to `null` again incase there were issue during initial login attempts. Then once the `res` is returned from a successful login we again set `error` to `null`.  This is so any errors being displayed are wiped once rectified.  
+
+2. `Login.vue`:
+
+![Screenshot from 2021-03-09 14-23-33](https://user-images.githubusercontent.com/73107656/110484933-0aad6780-80e3-11eb-8327-a14e54ef1c70.png)
+
+
+
+# Redirecting users on successful login
+
 
