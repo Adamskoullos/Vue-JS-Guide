@@ -52,7 +52,7 @@ we then place an `@click` on the `<span>` tag which toggles the boolean from tru
 
 # Signup Composable
 
-1. Create `composables` folder and add `useSignup.js` file
+1. Create `composables` folder within `src` folder and add `useSignup.js` file
 
 Within `useSignup.js` from a module perspective we will have a `signup` function that includes the logic and a `useSignup` function that returns the `signup` function.  The `useSignup` function is the function that is exported.  This means that the actual sign up logic is only saved in one place, in the `useSignup.js` composable.  When the exported `useSignup` function is invoked it returns the `signup` function and the `error` property.
 
@@ -74,8 +74,28 @@ Here is the full pattern:
 
 ![Screenshot from 2021-03-09 07-46-24](https://user-images.githubusercontent.com/73107656/110435962-8f7c8f00-80ab-11eb-8de3-37d29ebaf6f6.png)
 
+Now we can go back to the `signup.vue` form and add the `signup()` function to the `handleSubmit` function. `signup()` is an async function so `handleSubmit` is also and `async` function. We use the `await` keyword when we invoke `signup()`. The function takes in the user inputs (email.value, password.value and displayName.value).  We then add `error` to the `setup()` returned object to have access to any errors within the template. Here is the update pattern for the `signup.vue` form, we still need to add the error div to the template, which we will work on next:
+
+![Screenshot from 2021-03-09 10-42-40](https://user-images.githubusercontent.com/73107656/110458877-2f461700-80c4-11eb-9aad-c2706895883e.png)
+
 
 # Outputting Errors
+
+The `signup` function already has an error property that is extracted when we destruct the `useSignup` function.  To use it within a forms template we just need to return `error` from the `setup()` function and use it within the template. The default value for error is `null` meaning that we can set up an error div within the template and it will not display unless there is an error in which case the error message will be displayed.
+
+To recap, we have set up the property `error` already within the `useSignup.js` composable and the `catch` block within the `signup()` function takes an error if there is one and sets the value or `error` to the `err.message`. The cool thing is that firebase has a load of built in authentication error messages so we cna use them directly within the template to let the user know why there is a problem so they can try again.
+
+Here is the completed pattern for the `signup.vue` form:
+
+![Screenshot from 2021-03-09 10-49-17](https://user-images.githubusercontent.com/73107656/110459631-1e49d580-80c5-11eb-95a0-d65928506236.png)
+
+Here a few built in firebase error messages:
+
+![Screenshot from 2021-03-09 10-51-00](https://user-images.githubusercontent.com/73107656/110460098-ac25c080-80c5-11eb-82d5-f2f7beb46a2b.png)
+
+![Screenshot from 2021-03-09 10-51-40](https://user-images.githubusercontent.com/73107656/110460107-adef8400-80c5-11eb-8529-57e1038857a4.png)
+
+![Screenshot from 2021-03-09 10-52-07](https://user-images.githubusercontent.com/73107656/110460110-afb94780-80c5-11eb-843e-330f394a19f3.png)
 
 
 
