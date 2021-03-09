@@ -74,7 +74,7 @@ Here is the full pattern:
 
 ![Screenshot from 2021-03-09 11-02-17](https://user-images.githubusercontent.com/73107656/110461097-ed6aa000-80c6-11eb-9d1c-01f565681230.png)
 
-Now we can go back to the `signup.vue` form and add the `signup()` function to the `handleSubmit` function. `signup()` is an async function so `handleSubmit` is also and `async` function. We use the `await` keyword when we invoke `signup()`. The function takes in the user inputs (email.value, password.value and displayName.value).  We then add `error` to the `setup()` returned object to have access to any errors within the template. Here is the update pattern for the `signup.vue` form, we still need to add the error div to the template, which we will work on next:
+Now we can go back to the `signup.vue` form and add the `signup()` function to the `handleSubmit` function. `signup()` is an async function so `handleSubmit` is also an `async` function. We use the `await` keyword when we invoke `signup()`. The function takes in the user inputs (email.value, password.value and displayName.value).  We then add `error` to the `setup()` returned object to have access to any errors within the template. Here is the updated pattern for the `signup.vue` form, we still need to add the error div to the template, which we will work on next:
 
 ![Screenshot from 2021-03-09 10-42-40](https://user-images.githubusercontent.com/73107656/110458877-2f461700-80c4-11eb-9aad-c2706895883e.png)
 
@@ -83,10 +83,11 @@ Now we can go back to the `signup.vue` form and add the `signup()` function to t
 
 The `signup` function already has an error property that is extracted when we destruct the `useSignup` function.  To use it within a forms template we just need to return `error` from the `setup()` function and use it within the template. The default value for error is `null` meaning that we can set up an error div within the template and it will not display unless there is an error in which case the error message will be displayed.
 
-To recap, we have set up the property `error` already within the `useSignup.js` composable and the `catch` block within the `signup()` function takes an error if there is one and sets the value or `error` to the `err.message`. The cool thing is that firebase has a load of built in authentication error messages so we cna use them directly within the template to let the user know why there is a problem so they can try again.
+To recap, we have set up the property `error` already within the `useSignup.js` composable and the `catch` block within the `signup()` function takes an error if there is one and sets the value of `error` to the `err.message`. The cool thing is that firebase has a load of built in authentication error messages so we can use them directly within the template to let the user know why there is a problem so they can try again.
 
 Here is the completed pattern for the `signup.vue` form:
 
+![Screenshot from 2021-03-09 11-23-15](https://user-images.githubusercontent.com/73107656/110463477-dc6f5e00-80c9-11eb-9a40-6bf1efbdd046.png)
 
 
 Here a few built in firebase error messages:
