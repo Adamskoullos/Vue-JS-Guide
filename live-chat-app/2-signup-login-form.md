@@ -90,7 +90,7 @@ Here is the completed pattern for the `signup.vue` form:
 ![Screenshot from 2021-03-09 11-23-15](https://user-images.githubusercontent.com/73107656/110463477-dc6f5e00-80c9-11eb-9a40-6bf1efbdd046.png)
 
 
-Here a few built in firebase error messages:
+Here is a few built in firebase error messages:
 
 ![Screenshot from 2021-03-09 10-51-00](https://user-images.githubusercontent.com/73107656/110460098-ac25c080-80c5-11eb-82d5-f2f7beb46a2b.png)
 
