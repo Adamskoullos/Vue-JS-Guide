@@ -64,7 +64,7 @@ Within `useSignup.js` from a module perspective we will have a `signup` function
 
 - Create the async `signup` function and start with `try`. Using `fAuth` and the firebase create user method.  Add an `if` first to to catch an error if there is no response, then add an `await` to update user name when the `res` is returned.  Then we return the `res` so we can use it later.  At the end of the `try`, we add a `catch`:
 
-![Screenshot from 2021-03-09 07-44-44](https://user-images.githubusercontent.com/73107656/110435774-53e1c500-80ab-11eb-93e5-1682ee53d88b.png)
+![Screenshot from 2021-03-09 11-00-59](https://user-images.githubusercontent.com/73107656/110460948-c01df200-80c6-11eb-9b04-647268133ea2.png)
 
 - Below the `signup` function create the `useSignup` function that has the sole job of returning the `error` property and `signup` function. Then finally we export the `useSignup` function.:
 
@@ -72,7 +72,7 @@ Within `useSignup.js` from a module perspective we will have a `signup` function
 
 Here is the full pattern:
 
-![Screenshot from 2021-03-09 07-46-24](https://user-images.githubusercontent.com/73107656/110435962-8f7c8f00-80ab-11eb-8de3-37d29ebaf6f6.png)
+![Screenshot from 2021-03-09 11-02-17](https://user-images.githubusercontent.com/73107656/110461097-ed6aa000-80c6-11eb-9d1c-01f565681230.png)
 
 Now we can go back to the `signup.vue` form and add the `signup()` function to the `handleSubmit` function. `signup()` is an async function so `handleSubmit` is also and `async` function. We use the `await` keyword when we invoke `signup()`. The function takes in the user inputs (email.value, password.value and displayName.value).  We then add `error` to the `setup()` returned object to have access to any errors within the template. Here is the update pattern for the `signup.vue` form, we still need to add the error div to the template, which we will work on next:
 
@@ -87,7 +87,7 @@ To recap, we have set up the property `error` already within the `useSignup.js` 
 
 Here is the completed pattern for the `signup.vue` form:
 
-![Screenshot from 2021-03-09 10-49-17](https://user-images.githubusercontent.com/73107656/110459631-1e49d580-80c5-11eb-95a0-d65928506236.png)
+
 
 Here a few built in firebase error messages:
 
