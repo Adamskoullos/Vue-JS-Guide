@@ -112,7 +112,48 @@ Here is a few built in firebase error messages:
 ![Screenshot from 2021-03-09 14-23-33](https://user-images.githubusercontent.com/73107656/110484933-0aad6780-80e3-11eb-8327-a14e54ef1c70.png)
 
 
+# Redirecting users once they are logged in or Signed up
 
-# Redirecting users on successful login
+## This section covers emitting custom events within the setup function (context.emit('customEvent'))
+
+Once a user logs in they are taken to the `Chatroom.vue` view, to do this we:
+
+1. Create `Chatroom.vue` within the views folder
+
+2. Import the component into the router `index.js`, create the route
+
+![Screenshot from 2021-03-09 15-12-54](https://user-images.githubusercontent.com/73107656/110492282-f28d1680-80e9-11eb-872b-293a1500795e.png)
+
+3. Once a user logs in or signs up we want to emit a custom event up from these components to their parent component/view `Welcome` so we can redirect them to the `Chatroom` view.  We do this within the `handleSubmit()` function:
+
+**Note**: Top emit a custom event within the composition api `setup()` function we need to pass in the `context` property. `context` is the second argument that can be passed into the `setup()` function so to use it we need to also pass in the first argument.  Then we can use `context` to call the `emit` custom event and send the event up to the parent component:
+
+This is the `Login.view` component:
+
+![Screenshot from 2021-03-09 15-51-00](https://user-images.githubusercontent.com/73107656/110498462-41897a80-80ef-11eb-8842-b1ba3efa3bc6.png)
+
+This is the `Signup.vue` component:
+
+![Screenshot from 2021-03-09 15-51-35](https://user-images.githubusercontent.com/73107656/110498549-57973b00-80ef-11eb-83ee-fae80699d750.png)
+
+Then we need to listen for this event back in the parent component, the `Welcome.vue`:
+
+![Screenshot from 2021-03-09 15-52-19](https://user-images.githubusercontent.com/73107656/110498664-71388280-80ef-11eb-890e-aa8c293ea564.png)
+
+**Note**: Above both the `Signup` and `Login` components have their own listener but trigger the same `enterChatroom` function, which we will cover now.
+
+The `enterChatroom` function redirects the user to the chatroom, so we need to import `userouter()` from Vue, then we need to invoke `useRouter`, saving the returned value to `router`. Now we can call the router and push the user to a new view:
+
+![Screenshot from 2021-03-09 15-56-42](https://user-images.githubusercontent.com/73107656/110499359-0dfb2000-80f0-11eb-95be-3311e405c4ba.png)
+
+**Note**: The route name is used to redirect the user, when we do this we need to put it in an object and use a string for the value (as above)
+
+Below is the full pattern for the `Welcome` view:
+
+![Screenshot from 2021-03-09 15-59-35](https://user-images.githubusercontent.com/73107656/110499752-7518d480-80f0-11eb-9f45-11d83c06c8c3.png)
+
+
+
+
 
 
