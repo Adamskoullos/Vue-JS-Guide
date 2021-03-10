@@ -98,6 +98,21 @@ If the user is logged in but decides to use the history tabs to navigate or refr
 ![Screenshot from 2021-03-10 14-32-24](https://user-images.githubusercontent.com/73107656/110644886-71975300-81ad-11eb-9019-375b5aff7b89.png)
 
 
+# Redirecting users to the Welcome view when logged out
+
+The example below piggy backs onto the end of the `logout()` function using an `await` within the `Navbar` component and includes:
+
+- importing the router and saving it to a const
+- creating an `await` after the `logout()` function using the `router.push()` to redirect back to the `Welcome` view
+
+![Screenshot from 2021-03-10 14-43-15](https://user-images.githubusercontent.com/73107656/110646614-f6cf3780-81ae-11eb-86bb-31a32361ddff.png)
+ 
+This second example uses the firebase built in `watch()` method.  The logic is placed within the `Chatroom` `setup()` function.  The `watch()` method takes in the current `user` which we get from the `getUser()` function when we destruct it.  If the user is not logged in the `user.value` is `null` and if this is the case we want to redirect to the `Welcome` view.  we need to use `user.value` as user is a `ref` within the `getUser.js` composable.
+
+Here is the pattern:
+
+![Screenshot from 2021-03-10 16-06-54](https://user-images.githubusercontent.com/73107656/110659621-a52caa00-81ba-11eb-8e32-8db26bf1358d.png)
+
 
  
 
