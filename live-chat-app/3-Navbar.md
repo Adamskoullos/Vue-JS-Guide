@@ -66,6 +66,23 @@ Then every time there is a state change, the value is updated from the logic bel
 ![Screenshot from 2021-03-10 10-48-33](https://user-images.githubusercontent.com/73107656/110617976-2e79b780-818e-11eb-98e7-93ffb91cb586.png)
 
 
+# Route Auth Guard
+
+An authentication guard is a function that is defined within the router (index.js) or a composable and can be used within the routes. An auth guard becomes a middle man and undertakes user checks before running some code and finally routing the user to the destination view.
+
+In this case the auth guard checks if the user is logged in and if so routes them through to the `Chatroom` view, if the user is not logged in they are routed back to the `Welcome` view where they can login or sign up.
+
+**index.js - Router**:
+
+1. Import `fAuth`
+
+2. Define the function expression for the auth guard logic
+
+3. Add the function as the value to a `beforeEnter` property within the route
+
+![Screenshot from 2021-03-10 13-38-36](https://user-images.githubusercontent.com/73107656/110638065-039b5d80-81a6-11eb-8bda-07fd132fdc67.png)
+
+
 
  
 
