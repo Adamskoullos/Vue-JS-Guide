@@ -83,6 +83,21 @@ In this case the auth guard checks if the user is logged in and if so routes the
 ![Screenshot from 2021-03-10 13-38-36](https://user-images.githubusercontent.com/73107656/110638065-039b5d80-81a6-11eb-8bda-07fd132fdc67.png)
 
 
+# Waiting for firebase auth before we initialise on a page reload
+
+If the user is logged in but decides to use the history tabs to navigate or refreshes their browser the app will not reload and force the user to sign in again. To do this we make some adjustments to the `main.js` file so firebase checks for user before the app is loaded.  If the user is logged in already the app will not reload and the user can directly access the `Chatroom` and not be redirected to the `Welcome` view: 
+
+**main.js**:
+
+1. import `fAuth` from firebase/config.js
+
+2. Create a `let app` which is initially `null`
+
+3. wrap the Vue `create(app)` within an `if` to run only if `app` is `null`, then wrap the whole lot within a function that triggers when firebase authentication state first changes.  The function runs and firebase checks if the user is currently logged in or not.  If the user is already logged in the code inside the `if` will not re run, as the Vue app has already loaded, however if the user is not already logged in the Vue app will load.
+
+![Screenshot from 2021-03-10 14-32-24](https://user-images.githubusercontent.com/73107656/110644886-71975300-81ad-11eb-9019-375b5aff7b89.png)
+
+
 
  
 
