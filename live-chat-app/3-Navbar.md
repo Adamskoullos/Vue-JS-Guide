@@ -64,6 +64,9 @@ Then every time there is a state change, the value is updated from the logic bel
 5. `Export default getUser`
 
 ![Screenshot from 2021-03-10 10-48-33](https://user-images.githubusercontent.com/73107656/110617976-2e79b780-818e-11eb-98e7-93ffb91cb586.png)
+
+
+
  
 
 

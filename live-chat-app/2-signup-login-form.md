@@ -11,7 +11,7 @@ Below that but within the form a submit button.  The form tags to have an `@clic
 
 The basic pattern below:
 
-![signup](https://user-images.githubusercontent.com/73107656/110626471-a8af3980-8198-11eb-9cb8-d3316afa8f7a.png)
+![signup2](https://user-images.githubusercontent.com/73107656/110627226-9aade880-8199-11eb-9bc5-79266370bf34.png)
 
 2. As above for the `Login.vue`, we can reuse the same pattern and alter to suit:
 
@@ -87,7 +87,7 @@ To recap, we have set up the property `error` already within the `useSignup.js` 
 
 Here is the completed pattern for the `signup.vue` form:
 
-![signup](https://user-images.githubusercontent.com/73107656/110626471-a8af3980-8198-11eb-9cb8-d3316afa8f7a.png)
+![signup2](https://user-images.githubusercontent.com/73107656/110627226-9aade880-8199-11eb-9bc5-79266370bf34.png)
 
 
 Here is a few built in firebase error messages:
@@ -103,7 +103,7 @@ Here is a few built in firebase error messages:
 
 1. Create `useLogin.js` composable and set up the structure. Import `ref` and `fAuth`, create a const `error`, a `login()` function for the logic and a `useLogin()` function that will return `login()` and `error`. Then lastly export the `useLogin()` function:
 
-![Screenshot from 2021-03-09 14-02-02](https://user-images.githubusercontent.com/73107656/110481960-0a5f9d00-80e0-11eb-8966-efb369dea7cc.png)
+![Screenshot from 2021-03-09 14-02-02](https://user-images.githubusercontent.com/73107656/110627695-30497800-819a-11eb-82fd-e82800c4064b.png)
 
 **Note**: As the file/module loads `error` is defined and set to `null`, as the `login()` function is triggered, `error` is set to `null` again incase there were issue during initial login attempts. Then once the `res` is returned from a successful login we again set `error` to `null`.  This is so any errors being displayed are wiped once rectified.  
 
