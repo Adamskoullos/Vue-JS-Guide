@@ -11,11 +11,11 @@ Below that but within the form a submit button.  The form tags to have an `@clic
 
 The basic pattern below:
 
-![Screenshot from 2021-03-08 13-48-52](https://user-images.githubusercontent.com/73107656/110330040-35c98580-8015-11eb-8ee8-4e09c949f43b.png)
+![signup](https://user-images.githubusercontent.com/73107656/110626471-a8af3980-8198-11eb-9cb8-d3316afa8f7a.png)
 
 2. As above for the `Login.vue`, we can reuse the same pattern and alter to suit:
 
-![Screenshot from 2021-03-08 13-51-43](https://user-images.githubusercontent.com/73107656/110330213-6dd0c880-8015-11eb-92f9-057fdfd776c0.png)
+![Screenshot from 2021-03-10 11-58-42](https://user-images.githubusercontent.com/73107656/110626547-c54b7180-8198-11eb-8320-9f6a2113e1f3.png)
 
 The components are in place we will come back for the logic.  Next lets add them to the `Welcome.vue` component:
 
@@ -87,7 +87,7 @@ To recap, we have set up the property `error` already within the `useSignup.js` 
 
 Here is the completed pattern for the `signup.vue` form:
 
-![Screenshot from 2021-03-09 11-23-15](https://user-images.githubusercontent.com/73107656/110463477-dc6f5e00-80c9-11eb-9a40-6bf1efbdd046.png)
+![signup](https://user-images.githubusercontent.com/73107656/110626471-a8af3980-8198-11eb-9cb8-d3316afa8f7a.png)
 
 
 Here is a few built in firebase error messages:
@@ -109,7 +109,7 @@ Here is a few built in firebase error messages:
 
 2. `Login.vue`:
 
-![Screenshot from 2021-03-09 14-23-33](https://user-images.githubusercontent.com/73107656/110484933-0aad6780-80e3-11eb-8327-a14e54ef1c70.png)
+![Screenshot from 2021-03-10 11-58-42](https://user-images.githubusercontent.com/73107656/110626547-c54b7180-8198-11eb-8320-9f6a2113e1f3.png)
 
 
 # Redirecting users once they are logged in or Signed up

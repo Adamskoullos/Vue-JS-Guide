@@ -42,3 +42,28 @@ This is the pattern so far:
 
 ![Screenshot from 2021-03-10 07-16-36](https://user-images.githubusercontent.com/73107656/110591113-90c3bf80-8170-11eb-9d26-88978d62cc9e.png)
 
+
+# Displaying user and email within the navbar
+
+Using firebase we can easily grab the current users `displayName` and `email` and then present this data dynamically within the navbar.  We will use a composable to handle this logic, `getUser.js`. 
+
+**getUser.js**:
+
+1. Create `getUser.js` composable and import `ref` and `fAuth`
+
+2. Create a `const user = ref(`fAuth.currentUser`)`, So if the user is already logged in the value is the user object and if not logged in the value will be `null` as default
+
+Then every time there is a state change, the value is updated from the logic below:
+
+3. Create a firebase built in listener for `user authentication state change` and define the callback.  The callback takes an input which is the `_user`.  This value is `null` if the user is not logged in and if the user is logged in the value will be the user object:
+
+    - Set the `user.value` to the value of `_user`
+
+4. Create the `getUser()` function that solely returns the `{ user }` **object**
+
+5. `Export default getUser`
+
+![Screenshot from 2021-03-10 10-48-33](https://user-images.githubusercontent.com/73107656/110617976-2e79b780-818e-11eb-98e7-93ffb91cb586.png)
+ 
+
+
