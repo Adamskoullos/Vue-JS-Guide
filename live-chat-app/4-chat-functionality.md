@@ -42,8 +42,10 @@ Lets step through the `getCollections.js` composable:
     - creates an object for each doc spreading in the doc.data and adding the doc.id
 
 **Note**: The reason for the `createdAt` check is to ensure the snapshot `timestamp` is from firestore and not locally created.
+
+**Note**: When we use the `onSnapshot()` function, we are subscribing to real-time monitoring, This does not automatically stop when the component un mounts.  This means that every time the user logs in a new `onSnapshot` is added.  therefore we need to unsubscribe each time the user logs out or the component un mounts.  To do this we add a const `unsub` to the beginning of the `onSnapshot()` function, turning it into a function expression and then call `unsub()` every time the component un mounts using the Vue `watchEffect` method.  The pattern for this is the bottom of the `getCollection` function:   
  
-![Screenshot from 2021-03-11 11-54-07](https://user-images.githubusercontent.com/73107656/110783533-7f59e080-8260-11eb-82c9-d1b8caa8c700.png)
+![Screenshot from 2021-03-11 16-55-43](https://user-images.githubusercontent.com/73107656/110824089-a1685880-828a-11eb-88a5-8abe00250fd7.png)
 
 Now we can import the `getCollection.js` composable into the `ChatWindow` component and work with the `documents` array.  There a few processes to be done within the `setup()` function:
 
