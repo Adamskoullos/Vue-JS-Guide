@@ -64,3 +64,14 @@ Now its time to create a computed property to create a new array of docs in orde
 Now the date is shown in the following format:
 
 ![Screenshot from 2021-03-11 15-44-00](https://user-images.githubusercontent.com/73107656/110813659-9dcfd400-8280-11eb-8ce0-40986f6fb6ad.png)
+
+
+# Auto-Scrolling
+
+Add auto-scrolling to the `ChatWindow` component within the `setup()` function so that the window always scrolls down to show the most recent messages. The pattern for this is at the bottom of the `setup()` function.
+
+We add a `ref="messages"` to the window div within the template, create a ref for it within the `setup()` function and then set the value of `messages` on every update using the Vue lifecycle hook `onUpdated()` to auto-scroll to the bottom.
+
+Here is the full `ChatWindow` pattern:
+
+![Screenshot from 2021-03-11 16-34-03](https://user-images.githubusercontent.com/73107656/110821046-9b24ad00-8287-11eb-8495-fc720ff925aa.png)
