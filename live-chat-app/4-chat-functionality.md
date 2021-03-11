@@ -77,3 +77,12 @@ We add a `ref="messages"` to the window div within the template, create a ref fo
 Here is the full `ChatWindow` pattern:
 
 ![Screenshot from 2021-03-11 16-34-03](https://user-images.githubusercontent.com/73107656/110821046-9b24ad00-8287-11eb-8495-fc720ff925aa.png)
+
+
+# Route Guard 
+
+## Preventing logged in users from hitting the Welcome view
+
+The route guard is added to the `index.js` router file below the `Auth Guard` and uses the same pattern to start with:
+
+![Screenshot from 2021-03-11 17-07-35](https://user-images.githubusercontent.com/73107656/110825763-4afc1980-828c-11eb-9077-ab05c540cb8e.png)
