@@ -55,7 +55,7 @@ Now we can import the `getCollection.js` composable into the `ChatWindow` compon
 
 Now its time to create a computed property to create a new array of docs in order to manipulate each createdAt timestamp using the imported function
 
-4. Create the computed property
+4. Create the computed property.  The map method returns an object for each doc, first spreading in the current doc and then over-riding the `createdAt` value with the newly formatted timestamp.
 
 5. return the computed property from the `setup()` function to use in the `v-for` and alter the template
 
