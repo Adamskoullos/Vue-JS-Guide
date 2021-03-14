@@ -55,7 +55,7 @@ Example:
 
 ## Set up the front end
 
-1. Install firebase tools, is the first time using them on the machine. This is saved to the machine globally and only needs to be installed once (not for each project)
+1. Install firebase tools: `npm install -g firebase-tools`, Only if the first time using them on the machine. This is saved to the machine globally and only needs to be installed once (not for each project)
 
 2. Initialise firebase `firebase init`:
 
@@ -68,3 +68,22 @@ Example:
 
 
 # Connecting the front end to firebase
+
+1. Create a front end `firebase` folder within `src` and then create a `config.js` file inside
+
+2. Install the firebase SDK for the project: `npm install firebase`
+
+3. Create a new firebase `web app` + `hosting` for the firebase project from the within the firebase console. `Register` the app 
+
+4. Go to settings for the firebase project and scroll down to `apps` and grab the `config` SDK snippet for the `app`
+
+5. Paste the config SDK into the `config.js` file and then set the rest of the file up:
+
+- Import `firebase` core, `firestore` and `authentication` 
+- Initialise firebase `app`
+- Initialise firebase services
+- Create firebase timestamp function
+
+- `Export { fStore, fAuth, timestamp }`
+
+![Screenshot from 2021-03-14 02-32-03](https://user-images.githubusercontent.com/73107656/111055413-7c800b00-846d-11eb-8571-e4eb7ab495c5.png)
