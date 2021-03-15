@@ -1,3 +1,5 @@
+This section deals with two views, one for the `Login` and one for the `Signup`.  The `Navbar` is also begun, conditionally showing the `Logout` button if users are logged in and the `Login` and `Signup` if not logged in.
+
 # Login
 
 1. Create `auth` folder within `views` folder and create the `Login.vue` view
@@ -31,6 +33,14 @@ Create a `Signup.vue` view, add to the `router` and set up `Signup.vue` file usi
 
 ![Screenshot from 2021-03-15 02-50-52](https://user-images.githubusercontent.com/73107656/111097360-45772b80-8539-11eb-8697-6844be7f3672.png)
 
+# Logout
 
+The logout functionality uses the `useLogout` composable which is extracted within the `setup()` function of the `Navbar` component:
+
+![Screenshot from 2021-03-15 04-49-47](https://user-images.githubusercontent.com/73107656/111105020-e0780180-8549-11eb-8e1d-808ebd3c68d6.png)
+
+Below only shows the `<script>` for the `Navbar` as this is yet to be built up
+
+![Screenshot from 2021-03-15 04-50-25](https://user-images.githubusercontent.com/73107656/111105060-f8e81c00-8549-11eb-8ba9-572fd3f31c19.png)
 
 
