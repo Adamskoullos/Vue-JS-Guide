@@ -29,7 +29,7 @@ Create a `Signup.vue` view, add to the `router` and set up `Signup.vue` file usi
 
 ![Screenshot from 2021-03-15 02-53-45](https://user-images.githubusercontent.com/73107656/111097545-abfc4980-8539-11eb-9d40-556a32367aa3.png)
 
-![Screenshot from 2021-03-15 02-54-45](https://user-images.githubusercontent.com/73107656/111097633-cfbf8f80-8539-11eb-835b-e4b60f2624ef.png)
+![Screenshot from 2021-03-15 06-00-49](https://user-images.githubusercontent.com/73107656/111110072-ce02c580-8553-11eb-93a4-3254bb502c81.png)
 
 ![Screenshot from 2021-03-15 02-50-52](https://user-images.githubusercontent.com/73107656/111097360-45772b80-8539-11eb-8697-6844be7f3672.png)
 
@@ -42,5 +42,11 @@ The logout functionality uses the `useLogout` composable which is extracted with
 Below only shows the `<script>` for the `Navbar` as this is yet to be built up
 
 ![Screenshot from 2021-03-15 04-50-25](https://user-images.githubusercontent.com/73107656/111105060-f8e81c00-8549-11eb-8ba9-572fd3f31c19.png)
+
+# Conditionally showing navbar tabs depending on user status
+
+This is the pattern for the `Navbar` template to show `Login` and `Signup` tabs if user not logged in and the `Logout` tab if they are.  Moving forward we will add the main navigation tabs within the div that contains the `Logout` tab:
+
+![Screenshot from 2021-03-15 06-01-52](https://user-images.githubusercontent.com/73107656/111110222-099d8f80-8554-11eb-9fc8-c49461d58648.png)
 
 
