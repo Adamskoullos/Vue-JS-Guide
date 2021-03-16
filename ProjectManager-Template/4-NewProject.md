@@ -103,9 +103,10 @@ We now need to import some composables to `NewProject` so we can use their data 
 
 Now its time to destruct the above and build out the `handleSubmit` logic to add a new project to the db.  We also add a local `isPendingLocal` boolean to show a loading button whilst the new doc is being added to the db.  We still need to add the router and redirect to the projects or project edit view but we will come back to this, here is the pattern for the `NewProject` view for now:
 
-![Screenshot from 2021-03-16 10-40-13](https://user-images.githubusercontent.com/73107656/111296101-01248200-8644-11eb-95a2-05ce05ff921e.png)
-![Screenshot from 2021-03-16 10-41-01](https://user-images.githubusercontent.com/73107656/111296195-1e595080-8644-11eb-87ee-8c9ddb6b8882.png)
-![Screenshot from 2021-03-16 10-41-37](https://user-images.githubusercontent.com/73107656/111296256-3204b700-8644-11eb-8aca-7319c5d490d7.png)
+![Screenshot from 2021-03-16 15-56-00](https://user-images.githubusercontent.com/73107656/111339984-1dd6af00-8670-11eb-8507-eb605ad6a288.png)
+![Screenshot from 2021-03-16 15-56-39](https://user-images.githubusercontent.com/73107656/111340089-347d0600-8670-11eb-9c06-49743db2fab1.png)
+![Screenshot from 2021-03-16 15-57-03](https://user-images.githubusercontent.com/73107656/111340133-42cb2200-8670-11eb-9d41-86759ca19a88.png)
+
 
 
 
