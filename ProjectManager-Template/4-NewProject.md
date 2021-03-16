@@ -107,8 +107,27 @@ Now its time to destruct the above and build out the `handleSubmit` logic to add
 ![Screenshot from 2021-03-16 15-56-39](https://user-images.githubusercontent.com/73107656/111340089-347d0600-8670-11eb-9c06-49743db2fab1.png)
 ![Screenshot from 2021-03-16 15-57-03](https://user-images.githubusercontent.com/73107656/111340133-42cb2200-8670-11eb-9d41-86759ca19a88.png)
 
+The `NewProject` view above has a lot going on so let break it down:
+
+**Template**: Inputs have v-model for two way binding, the error divs only show if there is an error to display, there are two buttons, one to show as a default and one to be shown during upload of data to the db to let the user know something is happening.
+
+**script**: Below where we import and then destruct composables there are a bunch of refs for the inputs.  Some are used in the `handleSubmit` function and the others in the `handleChange` function.
+
+We then create an `isPendingLocal` property which toggles a boolean ans controls which button is shown within the template depending on if a new project is being uploaded to firestore.  The value is initially set to false and then just inside the `handleSubmit` function inside the `if` the `isPendingLocal` property value is set to true which then shows the loading button to the user. It is then set back to false once the `addDoc` function has completed.
+
+Below the `handleSubmit` function there is an array of accepted `fileTypes` that is used within the `handleChange` function to check if the file being uploaded is either jpeg or png. 
+
+## Displaying projects
+
+Now we can create new projects, we need to access the collection of projects from firestore and display them to the user.  To do this we will create a `Projects` view which will have a nested component `ProjectsList` which is where the the template for each single project will be structured and where the `projects` collection will be cycled through and added to the list of projects.  
+
+![Screenshot from 2021-03-16 16-24-18](https://user-images.githubusercontent.com/73107656/111344197-12858280-8674-11eb-9631-8f3be40633d3.png)
 
 
+![Screenshot from 2021-03-16 16-25-04](https://user-images.githubusercontent.com/73107656/111344321-2e892400-8674-11eb-89c6-cecd764aaa8e.png)
+ 
+
+![Screenshot from 2021-03-16 16-25-57](https://user-images.githubusercontent.com/73107656/111344473-4cef1f80-8674-11eb-8177-e891af5694b8.png) 
 
 
 
