@@ -59,7 +59,7 @@ Once an image has been chosen the `Add new project` button has been clicked one 
 
 1. Import `ref()` from vue and `fStorage` from `config.js`
 
-2. Destruct the `getUser()` composable to extract the `user`
+2. Import and destruct the `getUser()` composable to extract the `user`
 
 3. Create `useStorage()` function which will be returned.  This function will return: `uploadImage()` function, `error` property and the returned `url` to the file within firebase storage
 
@@ -79,5 +79,36 @@ Once we have these saved we can add `try`, `catch` blocks:
 
 `useStorage` returns all `ref` properties and the `uploadImage()` function and then `useStorage()` is exported to be used within components:
 
-![Screenshot from 2021-03-16 06-17-47](https://user-images.githubusercontent.com/73107656/111264398-57cb9500-861f-11eb-941c-e70661abf37c.png)
+![Screenshot from 2021-03-16 10-08-34](https://user-images.githubusercontent.com/73107656/111291926-940eed80-863f-11eb-99c4-0d2c4575f842.png)
+
+## Implement composable within NewProject component
+
+Now we will import the `useStorage.js` composable into the `NewProject` view and trigger `uploadImage()` when the the form is submitted:
+
+1. Import composable
+
+2. Destruct `useStorage()`
+
+3. Create `handleSubmit()` function, return and use within the form
+
+So now we have both the `handleChange()` function adding an image file and the `handleSubmit()` function uploading the image to firebase storage.  We need to complete the logic so the new project is added to the firestore `projects` db.
+
+## Posting new project object to firestore
+
+We now need to import some composables to `NewProject` so we can use their data and functions to complete the logic needed to post a new project to firestore:
+
+- `useCollection` so we can add a new document to the collection
+- `getUser` so we can grab the current user
+- `timestamp` so we can add a `createdAt` property to the new document
+
+Now its time to destruct the above and build out the `handleSubmit` logic to add a new project to the db.  We also add a local `isPendingLocal` boolean to show a loading button whilst the new doc is being added to the db.  We still need to add the router and redirect to the projects or project edit view but we will come back to this, here is the pattern for the `NewProject` view for now:
+
+![Screenshot from 2021-03-16 10-40-13](https://user-images.githubusercontent.com/73107656/111296101-01248200-8644-11eb-95a2-05ce05ff921e.png)
+![Screenshot from 2021-03-16 10-41-01](https://user-images.githubusercontent.com/73107656/111296195-1e595080-8644-11eb-87ee-8c9ddb6b8882.png)
+![Screenshot from 2021-03-16 10-41-37](https://user-images.githubusercontent.com/73107656/111296256-3204b700-8644-11eb-8aca-7319c5d490d7.png)
+
+
+
+
+
 
