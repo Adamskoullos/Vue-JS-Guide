@@ -38,7 +38,7 @@ Firebase storage can store:
 
 So in this project the path will look like this:
 
-`project-cover / { userId } / { file-name }`
+`projectImages/${user.value.uid}/${file.name}`
 
 project-cover is the main folder, then `userId` is the folder for each user then the file name is the image.
 
@@ -51,4 +51,33 @@ project-cover is the main folder, then `userId` is the folder for each user then
 3. Add to the exported object
 
 ![Screenshot from 2021-03-15 15-56-20](https://user-images.githubusercontent.com/73107656/111182642-01227480-85a7-11eb-857c-7060a1f98ccc.png)
+
+
+## Uploading images
+
+Once an image has been chosen the `Add new project` button has been clicked one of the events we need to trigger is the uploading of the image to the firebase storage folder.  The logic for this is structured within a `useStorage.js` composable.
+
+1. Import `ref()` from vue and `fStorage` from `config.js`
+
+2. Destruct the `getUser()` composable to extract the `user`
+
+3. Create `useStorage()` function which will be returned.  This function will return: `uploadImage()` function, `error` property and the returned `url` to the file within firebase storage
+
+Lets step through `useStorage()`:
+
+- Create refs for: `error`, `url` this is the returned public url from firebase so we can access the image, `filePath` this is where we are saving the file within firebase storage.
+
+- Next we create the async `uploadImage()` function which takes in the `file` to be uploaded.  Within the function we:
+    - Set the `filePath` value dynamically to the current users folder within the projects folder so we have a reference to this path
+    - We then create a storage ref which accesses firebase storage and passes in the path
+
+Once we have these saved we can add `try`, `catch` blocks:
+
+**try**: Create a const for the `res` and add the await keyword before invoking the file upload firebase function. The returned object saved to `res` includes a firebase method that can access the public url for the uploaded file. We then invoke this method on the returned `res` object and save the public url to `url.value`
+
+**catch**: This is the normal pattern
+
+`useStorage` returns all `ref` properties and the `uploadImage()` function and then `useStorage()` is exported to be used within components:
+
+![Screenshot from 2021-03-16 06-17-47](https://user-images.githubusercontent.com/73107656/111264398-57cb9500-861f-11eb-941c-e70661abf37c.png)
 
