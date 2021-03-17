@@ -9,4 +9,11 @@ This pattern is added above the `routes` object within `index.js` and then used 
 ![Screenshot from 2021-03-17 06-04-42](https://user-images.githubusercontent.com/73107656/111422487-aee86d00-86e6-11eb-92c8-164887047889.png)
 
 
+# Managing a page reload
+
+So far if a user is logged in and the page gets reloaded the user is redirected to the home view.  This is because the app loads before firebase auth has had chance to authenticate the user.  To prevent this we need to only reload the app once firebase authentication has identified if there is a current logged in user.  This pattern is within `main.js` and wraps the Vue create app pattern:
+
+![Screenshot from 2021-03-17 06-48-24](https://user-images.githubusercontent.com/73107656/111426592-c88cb300-86ec-11eb-93de-b38889ac72b7.png)
+
+Now if there is a logged in user, if they reload the page, the current view they are on gets reloaded instead of them being booted back to the home view
 
