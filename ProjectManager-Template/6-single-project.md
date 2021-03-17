@@ -36,4 +36,43 @@ Here is the updated `handSubmit` function within the `NewProject` pattern:
 ![Screenshot from 2021-03-17 10-43-41](https://user-images.githubusercontent.com/73107656/111455399-a6575d00-870d-11eb-98de-62771c2963bb.png)
 
 
+## Getting single project data and outputting it within ProjectDetails
+
+First up we will alter the existing `getCollection` composable and create a `getDocument` composable to grab single projects using the project id.
+
+The `getDocument` function takes in the `collection` and `project id` as arguments. Then we create a couple of `ref's` to save the document object and any errors.
+
+Below that we use the firestore key and grab a reference for the document (project) and then we can add a firebase `onSnapshot()` real-time monitor to the document.  We save the returned value to a const `unsub`, so we can unsubscribe to the real-time `onSnapshot` when ever the component un-mounts.  This is used within the `watchEffect` function at the bottom of the module.  
+
+Back to the `onSnapshot`: The first argument is a callback that takes in the `doc` and updates the ref `document.value` on every new snapshot.  This is done by reassigning a new object and spreading in the doc.data and the doc.id.
+
+`document` is returned, now we can use the composable within the `ProjectDetails` component and extract the `document` data.
+
+![Screenshot from 2021-03-17 11-57-05](https://user-images.githubusercontent.com/73107656/111468229-3c46b400-871d-11eb-8c0e-cb0bc5fd9b09.png)
+
+
+## Deleting a project
+
+We first need to check if a user is the owner of a project and if so show a delete button. We need to use the `getUser` composable to get the current `user.value.uid` and then compare to the `project.value.userId` which a is a property on the project object in firestore.
+
+To do this we will use a computed property `ownership`. If `ownership` is true, then the user can see the delete button.
+
+Once the button has been clicked we fire the `handleDelete` function that invokes the `deleteDoc()` function which is in the `useDocument` composable. Still within the `handleDelete` function we want to also delete the image from firebase storage and then redirect the user to the `Projects` view
+
+The `deleteDoc()` logic will be placed within a new composable called `useDocument`:
+
+![Screenshot from 2021-03-17 15-36-44](https://user-images.githubusercontent.com/73107656/111494691-986a0200-8736-11eb-922c-eaf012b3d56b.png)
+
+We also need to add a `deleteImage()` function to the `useStorage` composable and then import, destruct and invoke `deleteImage()` within the `handleDelete()` function. Here is the `deleteImage` pattern:
+
+![Screenshot from 2021-03-17 16-14-46](https://user-images.githubusercontent.com/73107656/111500438-e9302980-873b-11eb-8ef3-45ffb70e4641.png)
+
+And now its time to pull it all together within the `handleDelete()` function within the `ProjectDetails` component:
+
+![Screenshot from 2021-03-17 16-59-40](https://user-images.githubusercontent.com/73107656/111507061-2d262d00-8742-11eb-800c-744c3a5d5fae.png)
+
+
+
+
+
 
