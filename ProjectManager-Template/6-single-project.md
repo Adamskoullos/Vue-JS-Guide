@@ -69,8 +69,7 @@ We also need to add a `deleteImage()` function to the `useStorage` composable an
 
 And now its time to pull it all together within the `handleDelete()` function within the `ProjectDetails` component:
 
-![Screenshot from 2021-03-17 16-59-40](https://user-images.githubusercontent.com/73107656/111507061-2d262d00-8742-11eb-800c-744c3a5d5fae.png)
-
+![Screenshot from 2021-03-18 11-48-18](https://user-images.githubusercontent.com/73107656/111621394-da02b780-87df-11eb-99cb-842580111a90.png)
 
 
 
