@@ -40,3 +40,27 @@ Here is the `AddTask` component pattern so far:
 
 # Adding the Tasks array to the the ProjectDetails view
 
+The template for the task list is within the `ProjectDetails` view, with the logic also being within the `setup()` function.  The `addNewTask` function within the `useDocument` composable was altered to be more general and renamed to `updateTasks`.  If a task is added, deleted or the completed state is changed, we are updating the project and more specifically the tasks array, so the `updateTasks` makes more sense and is more reusable.
+
+The `Add Tasks` button toggles the a boolean showing and hiding the add task form, with the form now also having a close button.
+
+
+This is the `updateTasks` function within the `useDocument` composable:
+
+![Screenshot from 2021-03-19 05-32-35](https://user-images.githubusercontent.com/73107656/111735798-87bfa600-8874-11eb-8b83-b3453016e0ac.png)
+
+
+Here are the pattern for task list template within the `ProjectDetails` view: 
+
+![Screenshot from 2021-03-19 05-33-33](https://user-images.githubusercontent.com/73107656/111735877-a887fb80-8874-11eb-9c40-01c2f855843f.png)
+
+
+Here are the click event functions for the tasks list within the `ProjectDetails` `setup()`, both utilising the `updatetasks` function:
+
+![Screenshot from 2021-03-19 05-36-29](https://user-images.githubusercontent.com/73107656/111736085-116f7380-8875-11eb-9163-6fced9c18452.png)
+
+
+And this is the `AddTask` component:
+
+![Screenshot from 2021-03-19 05-38-46](https://user-images.githubusercontent.com/73107656/111736258-63b09480-8875-11eb-9681-9874cd8c10a4.png)
+
