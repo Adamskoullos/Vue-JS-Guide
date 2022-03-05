@@ -1,5 +1,7 @@
-# Vue JS Reference Guide
+# Vue Toolbox
 
-### This guide is spread across multiple folders each containing its own mark down file and mini environment. You can view these folders easily by opening vs code in the [browser](https://github1s.com/Adamskoullos/Vue-JS-Guide/blob/master/README.md).
+#### Vue 3 Intricacies
 
-### The below links are for each sections mark down file which present the refined notes and patterns from each section:
+- [Watchers and Computed](https://github.com/Adamskoullos/Vue-JS-Guide/blob/master/vue-3-patterns.md/watchers.md)
+
+#### Vue 2 and 3 Basics
