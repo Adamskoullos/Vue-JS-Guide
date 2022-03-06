@@ -5,10 +5,10 @@
 - [Watchers and Computed](https://github.com/Adamskoullos/Vue-JS-Guide/blob/master/vue-3-patterns.md/watchers.md)
 - [Tabs](https://github.com/Adamskoullos/Vue-JS-Guide/blob/master/vue-3-patterns.md/tabs.md)
 - [Slots](https://github.com/Adamskoullos/Vue-JS-Guide/blob/master/vue-3-patterns.md/slots.md)
+- [Provide and Inject](https://github.com/Adamskoullos/Vue-JS-Guide/blob/master/vue-3-patterns.md/provide-inject.md)
 
 Todo:
 
-- [Provide and Inject]()
 - [Composables]()
 - [Plugins]()
 - [Transitions and Animations]()
