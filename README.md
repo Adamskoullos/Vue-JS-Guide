@@ -4,10 +4,10 @@
 
 - [Watchers and Computed](https://github.com/Adamskoullos/Vue-JS-Guide/blob/master/vue-3-patterns.md/watchers.md)
 - [Tabs](https://github.com/Adamskoullos/Vue-JS-Guide/blob/master/vue-3-patterns.md/tabs.md)
+- [Slots](https://github.com/Adamskoullos/Vue-JS-Guide/blob/master/vue-3-patterns.md/slots.md)
 
 Todo:
 
-- [Slots]()
 - [Provide and Inject]()
 - [Composables]()
 - [Plugins]()
