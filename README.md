@@ -6,10 +6,10 @@
 - [Tabs](https://github.com/Adamskoullos/Vue-JS-Guide/blob/master/vue-3-patterns.md/tabs.md)
 - [Slots](https://github.com/Adamskoullos/Vue-JS-Guide/blob/master/vue-3-patterns.md/slots.md)
 - [Provide and Inject](https://github.com/Adamskoullos/Vue-JS-Guide/blob/master/vue-3-patterns.md/provide-inject.md)
+- [Composables](https://github.com/Adamskoullos/Vue-JS-Guide/blob/master/vue-3-patterns.md/composables.md)
 
 Todo:
 
-- [Composables]()
 - [Plugins]()
 - [Transitions and Animations]()
 - [Routing]()
